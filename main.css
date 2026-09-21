@@ -929,3 +929,112 @@ img { max-width: 100%; display: block; }
     animation: none !important;
   }
 }
+/* ============================================
+   BỔ SUNG — Trang pháp lý, 404, cảm ơn
+   ============================================ */
+
+/* --- Trang pháp lý --- */
+.legal-content {
+  max-width: 780px;
+  margin: 0 auto;
+}
+.legal-updated {
+  font-size: 0.88rem;
+  opacity: 0.6;
+  font-style: italic;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed rgba(184,115,51,0.3);
+}
+.legal-content h2 {
+  font-size: 1.3rem;
+  margin: 36px 0 14px;
+  color: var(--navy);
+}
+.legal-content p {
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+.legal-content ul,
+.legal-content ol {
+  margin: 12px 0 20px;
+  padding-left: 24px;
+}
+.legal-content li {
+  margin-bottom: 10px;
+  line-height: 1.7;
+}
+.legal-content a {
+  color: var(--copper);
+  text-decoration: underline;
+  text-decoration-color: rgba(184,115,51,0.4);
+  text-underline-offset: 3px;
+  transition: var(--transition);
+}
+.legal-content a:hover {
+  color: var(--gold);
+  text-decoration-color: var(--gold);
+}
+.legal-content strong {
+  color: var(--navy);
+}
+
+/* --- Hero 404 --- */
+.error-hero {
+  background: var(--black);
+  padding: 100px 5% 90px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.error-code {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: clamp(5rem, 14vw, 9rem);
+  line-height: 1;
+  background: linear-gradient(135deg, var(--gold), var(--copper), var(--pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 20px;
+  letter-spacing: 0.02em;
+}
+.error-hero h1 {
+  color: var(--white);
+  margin-bottom: 10px;
+}
+.error-hero p {
+  color: var(--cream);
+  opacity: 0.85;
+}
+
+/* --- Hero cảm ơn --- */
+.thanks-hero {
+  background: var(--black);
+  padding: 100px 5% 90px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.thanks-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--copper));
+  color: var(--navy);
+  font-size: 2.5rem;
+  margin-bottom: 28px;
+  box-shadow: 0 12px 40px rgba(212,175,55,0.3);
+}
+.thanks-hero h1 {
+  color: var(--white);
+  margin-bottom: 10px;
+}
+.thanks-hero p {
+  color: var(--cream);
+  opacity: 0.85;
+  line-height: 1.7;
+}
