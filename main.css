@@ -169,11 +169,16 @@ img { max-width: 100%; display: block; }
 
 /* Dải navy cho đầu trang con */
 .page-hero {
-  background: var(--black);
+  position: relative;
+  overflow: hidden;
+  background: var(--navy);
   color: var(--white);
   padding: 80px 5% 60px;
   text-align: center;
-  border-top: 1px solid rgba(212, 175, 55, 0.25);   
+}
+.page-hero > * {
+  position: relative;
+  z-index: 1;
 }
 .page-hero h1 { color: var(--white); }
 .page-hero .roman {
@@ -1331,4 +1336,33 @@ img { max-width: 100%; display: block; }
   max-height: 150px;
   width: auto;
   display: block;
+}
+/* ============================================
+   Vệt sáng gradient cho page-hero (trang con)
+   ============================================ */
+
+.page-hero::before,
+.page-hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+.page-hero::before {
+  width: 400px;
+  height: 400px;
+  background: var(--copper);
+  opacity: 0.22;
+  top: -120px;
+  left: -120px;
+}
+.page-hero::after {
+  width: 350px;
+  height: 350px;
+  background: var(--pink);
+  opacity: 0.15;
+  bottom: -120px;
+  right: -80px;
 }
