@@ -169,10 +169,11 @@ img { max-width: 100%; display: block; }
 
 /* Dải navy cho đầu trang con */
 .page-hero {
-  background: var(--navy);
+  background: var(--black);
   color: var(--white);
   padding: 80px 5% 60px;
   text-align: center;
+  border-top: 1px solid rgba(212, 175, 55, 0.25);   
 }
 .page-hero h1 { color: var(--white); }
 .page-hero .roman {
