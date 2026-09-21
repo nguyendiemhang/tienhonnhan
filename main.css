@@ -1351,7 +1351,6 @@ img { max-width: 100%; display: block; }
   .logo-text small { font-size: 0.52rem; letter-spacing: 0.18em; }
   .logo-mark { width: 38px; height: 38px; }
 }
-
 @media (max-width: 480px) {
   .logo-text { font-size: 1rem; }
   .logo-text small { display: none; }
