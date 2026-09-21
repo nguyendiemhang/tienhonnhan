@@ -834,3 +834,59 @@ img { max-width: 100%; display: block; }
   margin-bottom: 10px;
 }
 .prep-item p { font-size: 0.95rem; opacity: 0.85; }
+
+/* ============================================
+   BỔ SUNG — Steps grid & field hint
+   ============================================ */
+
+/* --- Steps grid (3 bước) --- */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+}
+.step-card {
+  background: var(--white);
+  border: 1px solid rgba(184,115,51,0.3);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  text-align: center;
+  transition: var(--transition);
+  position: relative;
+}
+.step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(232,160,168,0.2);
+  border-color: var(--copper);
+}
+.step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--copper));
+  color: var(--navy);
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.step-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+.step-card p {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  line-height: 1.65;
+}
+
+/* --- Field hint (chú thích dưới input) --- */
+.field-hint {
+  font-size: 0.82rem;
+  opacity: 0.65;
+  margin-top: 6px;
+  font-style: italic;
+}
