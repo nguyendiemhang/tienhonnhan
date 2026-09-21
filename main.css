@@ -1038,3 +1038,62 @@ img { max-width: 100%; display: block; }
   opacity: 0.85;
   line-height: 1.7;
 }
+/* ============================================
+   BỔ SUNG — Badge "Dành cho ai", package grid
+   ============================================ */
+
+/* --- Audience badge (dưới hero) --- */
+.audience-badge {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 8px 20px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: var(--radius-pill);
+  color: var(--gold);
+  font-size: 0.88rem;
+  letter-spacing: 0.02em;
+  backdrop-filter: blur(4px);
+}
+
+/* --- Package grid (Mục V) --- */
+.package-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+.package-card {
+  background: var(--white);
+  border: 1px solid rgba(184,115,51,0.3);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  position: relative;
+  transition: var(--transition);
+}
+.package-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(232,160,168,0.2);
+}
+.package-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 4px;
+}
+.package-featured {
+  border: 2px solid var(--gold);
+  background: linear-gradient(180deg, var(--white), #FFF8E8);
+}
+.package-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--pink);
+  color: var(--navy);
+  padding: 5px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(232,160,168,0.4);
+}
