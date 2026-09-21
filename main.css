@@ -1097,3 +1097,136 @@ img { max-width: 100%; display: block; }
   white-space: nowrap;
   box-shadow: 0 4px 12px rgba(232,160,168,0.4);
 }
+/* ============================================
+   BỔ SUNG — Timeline, refund badge
+   ============================================ */
+
+/* --- Refund badge (trang combo) --- */
+.refund-badge-wrap {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.refund-badge {
+  display: inline-block;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, rgba(232,160,168,0.2), rgba(245,198,203,0.1));
+  border: 1px solid var(--pink);
+  border-radius: var(--radius-pill);
+  color: var(--navy);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* --- Timeline --- */
+.timeline {
+  max-width: 780px;
+  margin: 0 auto;
+  position: relative;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 85px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--gold), var(--copper), var(--pink));
+  opacity: 0.5;
+}
+.timeline-item {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 40px;
+  align-items: flex-start;
+  position: relative;
+}
+.timeline-marker {
+  flex-shrink: 0;
+  width: 170px;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 16px;
+  position: relative;
+}
+.timeline-week {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  color: var(--copper);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  padding-top: 8px;
+  white-space: nowrap;
+}
+.timeline-marker::after {
+  content: '';
+  position: absolute;
+  right: -9px;
+  top: 16px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid var(--gold);
+  z-index: 1;
+}
+.timeline-content {
+  flex: 1;
+  background: var(--white);
+  border: 1px solid rgba(184,115,51,0.25);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  transition: var(--transition);
+}
+.timeline-content:hover {
+  border-color: var(--copper);
+  box-shadow: 0 8px 24px rgba(232,160,168,0.18);
+  transform: translateX(4px);
+}
+.timeline-content h3 {
+  font-size: 1.15rem;
+  margin: 6px 0 10px;
+}
+.timeline-content p {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  margin: 0;
+}
+.timeline-item-final .timeline-marker::after {
+  background: var(--gold);
+  border-color: var(--gold);
+  box-shadow: 0 0 0 4px rgba(212,175,55,0.2);
+}
+
+/* --- Timeline compact (trang chủ) --- */
+.timeline-compact .timeline-content {
+  padding: 20px 24px;
+}
+.timeline-compact .timeline-content h3 {
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+.timeline-compact .timeline-content p {
+  font-size: 0.9rem;
+}
+
+/* --- Responsive --- */
+@media (max-width: 640px) {
+  .timeline::before { left: 20px; }
+  .timeline-item {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .timeline-marker {
+    width: auto;
+    justify-content: flex-start;
+    padding: 0 0 0 44px;
+  }
+  .timeline-marker::after {
+    right: auto;
+    left: 14px;
+    top: 10px;
+  }
+  .timeline-week { padding-top: 0; }
+  .timeline-content { margin-left: 0; }
+}
