@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trắc nghiệm Big Five — Tiền Hôn Nhân</title>
+  <meta name="description" content="Bài trắc nghiệm tính cách Big Five (IPIP-50) — bước đầu tiên trong Mục I của chương trình Tiền Hôn Nhân.">
+  <meta name="robots" content="noindex, follow">
+
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Be+Vietnam+Pro:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="/" class="logo">
+      <img src="/images/LogoTienhonnhan.png" alt="Gạch Nối — Tiền Hôn Nhân" />
+    </a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav">
+      <a href="/gioi-thieu">Giới thiệu</a>
+      <a href="/thau-hieu-ban-than">Thấu hiểu</a>
+      <a href="/giao-tiep-xung-dot">Giao tiếp</a>
+      <a href="/tai-chinh-phap-ly">Tài chính</a>
+      <a href="/suc-khoe-sinh-san">Sức khỏe</a>
+      <a href="/tham-van-dong-hanh">Tham vấn</a>
+      <a href="/combo">Combo</a>
+      <a href="/dat-lich" class="nav-cta">Đặt lịch</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <span class="roman">BÀI TRẮC NGHIỆM</span>
+      <h1>Big Five — Tính cách</h1>
+      <p class="script">Hiểu mình trước, rồi hiểu người</p>
+    </section>
+
+    <section class="section">
+      <div class="container narrow quiz-container">
+
+        <!-- ===== BƯỚC 1: INTRO ===== -->
+        <div id="quiz-intro" class="quiz-stage">
+          <div class="quiz-intro-card">
+            <span class="script">Trước khi bắt đầu</span>
+            <h2 style="margin: 12px 0 20px;">Bài trắc nghiệm Big Five</h2>
+
+            <p>Bài gồm <strong>50 câu hỏi</strong>, chia làm 5 nhóm tính cách. Thời gian làm khoảng <strong>10–15 phút</strong>.</p>
+
+            <p>Với mỗi câu, bạn chọn mức độ đúng với bản thân theo thang 1–5:</p>
+
+            <ul class="quiz-scale-legend">
+              <li><span class="scale-num">1</span> Hoàn toàn không đúng với tôi</li>
+              <li><span class="scale-num">2</span> Không đúng với tôi</li>
+              <li><span class="scale-num">3</span> Bình thường / không chắc</li>
+              <li><span class="scale-num">4</span> Đúng với tôi</li>
+              <li><span class="scale-num">5</span> Hoàn toàn đúng với tôi</li>
+            </ul>
+
+            <div class="quiz-note">
+              <strong>💡 Lưu ý quan trọng</strong>
+              <p>Không có câu trả lời đúng/sai. Hãy trả lời theo bản thân thật của bạn — không phải theo hình mẫu bạn muốn trở thành. Kết quả chỉ có bạn và chuyên gia tư vấn xem được.</p>
+            </div>
+
+            <button class="btn btn-gold" onclick="startQuiz()" style="margin-top: 28px; width: 100%;">Bắt đầu làm bài</button>
+          </div>
+        </div>
+
+        <!-- ===== BƯỚC 2: LÀM BÀI ===== -->
+        <div id="quiz-playing" class="quiz-stage" style="display: none;">
+
+          <!-- Thanh tiến độ -->
+          <div class="quiz-progress">
+            <div class="quiz-progress-info">
+              <span id="quiz-group-label">Nhóm 1/5 · Hướng ngoại</span>
+              <span id="quiz-count-label">Câu 1/50</span>
+            </div>
+            <div class="quiz-progress-bar">
+              <div id="quiz-progress-fill" class="quiz-progress-fill" style="width: 2%;"></div>
+            </div>
+          </div>
+
+          <!-- Câu hỏi (JS render động) -->
+          <div id="quiz-question" class="quiz-question-card"></div>
+
+          <!-- Nút điều hướng -->
+          <div class="quiz-nav">
+            <button id="btn-prev" class="btn btn-outline" onclick="prevQuestion()" disabled>← Quay lại</button>
+            <button id="btn-next" class="btn btn-gold" onclick="nextQuestion()" disabled>Tiếp theo →</button>
+          </div>
+
+        </div>
+
+        <!-- ===== BƯỚC 3: FORM THÔNG TIN ===== -->
+        <div id="quiz-info" class="quiz-stage" style="display: none;">
+          <div class="quiz-info-card">
+            <span class="script">Gần xong rồi</span>
+            <h2 style="margin: 12px 0 20px;">Điền thông tin để nhận kết quả</h2>
+            <p>Chị sẽ ghép kết quả của bạn với người bạn đời (qua Mã cặp đôi) và giải mã trong buổi học Mục I.</p>
+
+            <form id="quiz-form" class="contact-form" style="margin-top: 24px;">
+              <div class="form-row">
+                <label for="q-name">Họ tên *</label>
+                <input type="text" id="q-name" name="name" required placeholder="Nguyễn Thị A">
+              </div>
+
+              <div class="form-row">
+                <label for="q-email">Email *</label>
+                <input type="email" id="q-email" name="email" required placeholder="email@example.com">
+              </div>
+
+              <div class="form-row">
+                <label for="q-code">Mã cặp đôi *</label>
+                <input type="text" id="q-code" name="couple_code" required placeholder="VD: CAP-2025-001" style="text-transform: uppercase;">
+                <p class="field-hint">Mã này do chị cung cấp khi bạn đăng ký Mục I. Hai người phải điền <strong>cùng một mã</strong>.</p>
+              </div>
+
+              <div class="form-row">
+                <label for="q-role">Bạn là *</label>
+                <select id="q-role" name="role" required>
+                  <option value="">-- Chọn một --</option>
+                  <option value="vo">Vợ / Vợ tương lai</option>
+                  <option value="chong">Chồng / Chồng tương lai</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <label class="checkbox-label">
+                  <input type="checkbox" name="consent" required>
+                  <span>Tôi đồng ý với <a href="/chinh-sach-bao-mat" style="color: var(--copper);">Chính sách bảo mật</a></span>
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-gold" style="width: 100%; margin-top: 8px;">Gửi kết quả</button>
+
+              <p class="form-note">Sau khi gửi, chị sẽ phản hồi trong vòng 24 giờ.</p>
+            </form>
+          </div>
+        </div>
+
+        <!-- ===== BƯỚC 4: CẢM ƠN ===== -->
+        <div id="quiz-done" class="quiz-stage" style="display: none;">
+          <div class="quiz-done-card center">
+            <span class="thanks-icon">♥</span>
+            <h2 style="margin: 20px 0 12px;">Cảm ơn bạn đã hoàn thành</h2>
+            <p class="script" style="font-size: 1.3rem;">Kết quả đã được gửi đi an toàn</p>
+            <p style="margin-top: 20px;">Chị sẽ ghép kết quả của bạn với người bạn đời và phản hồi trong vòng <strong>24 giờ</strong> qua email.</p>
+            <div class="hero-actions" style="justify-content: center; margin-top: 32px;">
+              <a href="/" class="btn btn-gold">Về trang chủ</a>
+              <a href="/dat-lich" class="btn btn-outline">Đặt lịch giải mã</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p class="script">Đồng hành cùng bạn trên hành trình về nhà</p>
+    <p class="footer-contact">Email: <a href="mailto:tienhonnhan.com.vn@gmail.com">tienhonnhan.com.vn@gmail.com</a></p>
+    <p class="footer-social">
+      <a href="#">Facebook</a> · <a href="#">Instagram</a> · <a href="#">TikTok</a>
+    </p>
+    <p class="footer-links">
+      <a href="/chinh-sach-bao-mat">Chính sách bảo mật</a> ·
+      <a href="/dieu-khoan-su-dung">Điều khoản sử dụng</a> ·
+      <a href="/chinh-sach-hoan-tien">Chính sách hoàn tiền</a> ·
+      <a href="/sitemap">Sitemap</a>
+    </p>
+    <div class="footer-copy">© 2025 Tiền Hôn Nhân · tienhonnhan.com.vn</div>
+  </footer>
+
+  <script src="/main.js"></script>
+
+  <script>
+  /* ============================================================
+     BIG FIVE QUIZ — Logic
+     ============================================================ */
+
+  // Cấu trúc: mỗi câu có { text, reversed }
+  // reversed: true = câu đảo điểm (-)
+  const QUIZ_DATA = [
+    // Nhóm 1 — Hướng ngoại (Extraversion)
+    { group: 1, groupName: 'Hướng ngoại', questions: [
+      { text: 'Tôi là linh hồn của bữa tiệc.', reversed: false },
+      { text: 'Tôi không nói nhiều.', reversed: true },
+      { text: 'Tôi cảm thấy thoải mái khi ở giữa đám đông.', reversed: false },
+      { text: 'Tôi thường đứng ở phía sau, ít nổi bật.', reversed: true },
+      { text: 'Tôi hay là người bắt chuyện trước.', reversed: false },
+      { text: 'Tôi ít có gì để nói.', reversed: true },
+      { text: 'Tôi trò chuyện với nhiều người khác nhau trong các buổi tiệc.', reversed: false },
+      { text: 'Tôi không thích trở thành tâm điểm chú ý.', reversed: true },
+      { text: 'Tôi không ngại khi mình là tâm điểm chú ý.', reversed: false },
+      { text: 'Tôi khá im lặng khi ở cạnh người lạ.', reversed: true }
+    ]},
+    // Nhóm 2 — Dễ chịu (Agreeableness)
+    { group: 2, groupName: 'Dễ chịu, hòa hợp', questions: [
+      { text: 'Tôi ít quan tâm đến cảm xúc của người khác.', reversed: true },
+      { text: 'Tôi thích tìm hiểu về con người.', reversed: false },
+      { text: 'Tôi hay nói lời làm tổn thương người khác.', reversed: true },
+      { text: 'Tôi đồng cảm với cảm xúc của người khác.', reversed: false },
+      { text: 'Tôi không quan tâm đến vấn đề của người khác.', reversed: true },
+      { text: 'Tôi có trái tim mềm mại, dễ rung động.', reversed: false },
+      { text: 'Tôi thực sự không hứng thú với người khác.', reversed: true },
+      { text: 'Tôi dành thời gian quan tâm đến người khác.', reversed: false },
+      { text: 'Tôi cảm nhận được cảm xúc của người khác.', reversed: false },
+      { text: 'Tôi khiến người khác cảm thấy thoải mái khi ở cạnh mình.', reversed: false }
+    ]},
+    // Nhóm 3 — Tận tâm (Conscientiousness)
+    { group: 3, groupName: 'Tận tâm, có tổ chức', questions: [
+      { text: 'Tôi luôn chuẩn bị sẵn sàng mọi thứ.', reversed: false },
+      { text: 'Tôi hay để đồ đạc bừa bãi.', reversed: true },
+      { text: 'Tôi chú ý đến từng chi tiết nhỏ.', reversed: false },
+      { text: 'Tôi hay làm rối tung mọi việc.', reversed: true },
+      { text: 'Tôi hoàn thành việc cần làm ngay khi có thể, không trì hoãn.', reversed: false },
+      { text: 'Tôi hay quên cất đồ đúng chỗ.', reversed: true },
+      { text: 'Tôi thích mọi thứ có trật tự, ngăn nắp.', reversed: false },
+      { text: 'Tôi hay trốn tránh trách nhiệm của mình.', reversed: true },
+      { text: 'Tôi tuân theo lịch trình đã đặt ra.', reversed: false },
+      { text: 'Tôi làm việc rất kỹ lưỡng, chỉn chu.', reversed: false }
+    ]},
+    // Nhóm 4 — Ổn định cảm xúc (Emotional Stability)
+    { group: 4, groupName: 'Ổn định cảm xúc', questions: [
+      { text: 'Tôi dễ bị căng thẳng.', reversed: true },
+      { text: 'Tôi thường cảm thấy thư thái, nhẹ nhõm.', reversed: false },
+      { text: 'Tôi hay lo lắng về mọi chuyện.', reversed: true },
+      { text: 'Tôi hiếm khi cảm thấy buồn bã.', reversed: false },
+      { text: 'Tôi dễ bị xáo trộn cảm xúc bởi những chuyện nhỏ.', reversed: true },
+      { text: 'Tôi dễ bực bội, khó chịu.', reversed: true },
+      { text: 'Tôi hay thay đổi tâm trạng.', reversed: true },
+      { text: 'Tôi thường xuyên có những đợt cảm xúc thất thường.', reversed: true },
+      { text: 'Tôi dễ bị kích động, nổi nóng.', reversed: true },
+      { text: 'Tôi thường cảm thấy buồn mà không rõ lý do.', reversed: true }
+    ]},
+    // Nhóm 5 — Cởi mở (Openness to Experience)
+    { group: 5, groupName: 'Cởi mở với trải nghiệm', questions: [
+      { text: 'Tôi có vốn từ vựng phong phú.', reversed: false },
+      { text: 'Tôi gặp khó khăn khi hiểu các ý tưởng trừu tượng.', reversed: true },
+      { text: 'Tôi có trí tưởng tượng phong phú.', reversed: false },
+      { text: 'Tôi không hứng thú với các ý tưởng trừu tượng, triết lý.', reversed: true },
+      { text: 'Tôi thường có những ý tưởng hay, mới lạ.', reversed: false },
+      { text: 'Tôi không có trí tưởng tượng tốt.', reversed: true },
+      { text: 'Tôi hiểu mọi thứ khá nhanh.', reversed: false },
+      { text: 'Tôi thích tìm hiểu những kiến thức phức tạp, học thuật.', reversed: false },
+      { text: 'Tôi dành thời gian suy ngẫm về mọi thứ xung quanh.', reversed: false },
+      { text: 'Tôi luôn đầy ắp ý tưởng.', reversed: false }
+    ]}
+  ];
+
+  // Làm phẳng danh sách câu hỏi để dễ truy cập theo index
+  const FLAT_QUESTIONS = [];
+  QUIZ_DATA.forEach(g => {
+    g.questions.forEach(q => {
+      FLAT_QUESTIONS.push({ ...q, group: g.group, groupName: g.groupName });
+    });
+  });
+  const TOTAL = FLAT_QUESTIONS.length;
+
+  // State
+  let answers = new Array(TOTAL).fill(null); // 1-5 hoặc null
+  let currentIndex = 0;
+
+  /* ============================================================
+     CHUYỂN BƯỚC
+     ============================================================ */
+  function showStage(id) {
+    ['quiz-intro', 'quiz-playing', 'quiz-info', 'quiz-done'].forEach(s => {
+      document.getElementById(s).style.display = (s === id) ? '' : 'none';
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function startQuiz() {
+    showStage('quiz-playing');
+    currentIndex = 0;
+    renderQuestion();
+  }
+
+  /* ============================================================
+     RENDER CÂU HỎI
+     ============================================================ */
+  function renderQuestion() {
+    const q = FLAT_QUESTIONS[currentIndex];
+    const container = document.getElementById('quiz-question');
+
+    // Progress
+    const percent = Math.round(((currentIndex + 1) / TOTAL) * 100);
+    document.getElementById('quiz-progress-fill').style.width = percent + '%';
+    document.getElementById('quiz-group-label').textContent = `Nhóm ${q.group}/5 · ${q.groupName}`;
+    document.getElementById('quiz-count-label').textContent = `Câu ${currentIndex + 1}/${TOTAL}`;
+
+    // Render câu hỏi + 5 lựa chọn
+    let html = `<p class="quiz-question-text">${q.text}</p>`;
+    html += '<div class="quiz-options">';
+    const scaleLabels = [
+      'Hoàn toàn không đúng',
+      'Không đúng',
+      'Bình thường / không chắc',
+      'Đúng',
+      'Hoàn toàn đúng'
+    ];
+    for (let i = 1; i <= 5; i++) {
+      const checked = answers[currentIndex] === i ? 'checked' : '';
+      html += `
+        <label class="quiz-option">
+          <input type="radio" name="q${currentIndex}" value="${i}" ${checked} onchange="selectAnswer(${i})">
+          <span class="quiz-option-num">${i}</span>
+          <span class="quiz-option-label">${scaleLabels[i-1]}</span>
+        </label>
+      `;
+    }
+    html += '</div>';
+    container.innerHTML = html;
+
+    // Nút điều hướng
+    document.getElementById('btn-prev').disabled = (currentIndex === 0);
+    document.getElementById('btn-next').disabled = (answers[currentIndex] === null);
+
+    // Đổi text nút next ở câu cuối
+    const btnNext = document.getElementById('btn-next');
+    if (currentIndex === TOTAL - 1) {
+      btnNext.textContent = 'Hoàn thành →';
+    } else {
+      btnNext.textContent = 'Tiếp theo →';
+    }
+  }
+
+  function selectAnswer(value) {
+    answers[currentIndex] = value;
+    document.getElementById('btn-next').disabled = false;
+  }
+
+  function nextQuestion() {
+    if (answers[currentIndex] === null) return;
+    if (currentIndex === TOTAL - 1) {
+      showStage('quiz-info');
+      return;
+    }
+    currentIndex++;
+    renderQuestion();
+  }
+
+  function prevQuestion() {
+    if (currentIndex === 0) return;
+    currentIndex--;
+    renderQuestion();
+  }
+
+  /* ============================================================
+     TÍNH ĐIỂM
+     ============================================================ */
+  function calculateScores() {
+    const scores = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+    FLAT_QUESTIONS.forEach((q, i) => {
+      const raw = answers[i];
+      const point = q.reversed ? (6 - raw) : raw;
+      scores[q.group] += point;
+    });
+    return scores;
+  }
+
+  function interpretScore(score) {
+    if (score <= 23) return 'Thấp';
+    if (score <= 36) return 'Trung bình';
+    return 'Cao';
+  }
+
+  /* ============================================================
+     SUBMIT FORM
+     ============================================================ */
+  document.getElementById('quiz-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Tính điểm
+    const scores = calculateScores();
+
+    // Chuẩn bị dữ liệu gửi
+    const formData = new FormData(this);
+
+    // Thêm điểm
+    formData.append('score_extraversion', scores[1] + ' (' + interpretScore(scores[1]) + ')');
+    formData.append('score_agreeableness', scores[2] + ' (' + interpretScore(scores[2]) + ')');
+    formData.append('score_conscientiousness', scores[3] + ' (' + interpretScore(scores[3]) + ')');
+    formData.append('score_emotional_stability', scores[4] + ' (' + interpretScore(scores[4]) + ')');
+    formData.append('score_openness', scores[5] + ' (' + interpretScore(scores[5]) + ')');
+
+    // Thêm câu trả lời thô
+    const rawAnswers = FLAT_QUESTIONS.map((q, i) => {
+      return `[${q.groupName}] ${q.text} → ${answers[i]}${q.reversed ? ' (đảo)' : ''}`;
+    }).join('\n');
+    formData.append('raw_answers', rawAnswers);
+    formData.append('quiz_type', 'Big Five');
+
+    // Gửi tới Formspree
+    // ⚠️ CHỊ THAY 'YOUR_FORM_ID' BẰNG ID THẬT CỦA CHỊ
+    fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+      if (response.ok) {
+        showStage('quiz-done');
+      } else {
+        alert('Có lỗi xảy ra. Vui lòng thử lại hoặc gửi email trực tiếp cho chị.');
+      }
+    })
+    .catch(() => {
+      alert('Không kết nối được. Vui lòng kiểm tra mạng và thử lại.');
+    });
+  });
+  </script>
+
+</body>
+</html>
