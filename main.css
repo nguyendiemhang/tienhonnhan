@@ -1324,3 +1324,10 @@ img { max-width: 100%; display: block; }
   .logo-text small { display: none; }
   .logo-mark { width: 34px; height: 34px; }
 }
+/* --- Giới hạn logo trong header --- */
+.site-header .logo img,
+.header .logo img {
+  max-height: 72px;
+  width: auto;
+  display: block;
+}
