@@ -1230,3 +1230,33 @@ img { max-width: 100%; display: block; }
   .timeline-week { padding-top: 0; }
   .timeline-content { margin-left: 0; }
 }
+/* ============================================
+   BỔ SUNG — Card icon riêng từng mục
+   ============================================ */
+
+/* --- Icon đầu mỗi card --- */
+.card-icon {
+  display: inline-block;
+  font-size: 1.8rem;
+  line-height: 1;
+  margin-bottom: 16px;
+  transition: var(--transition);
+}
+.card:hover .card-icon {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+/* --- Bỏ style cũ của card-arrow nếu còn sót --- */
+.card-arrow {
+  display: none;
+}
+
+/* --- Card có icon: sắp xếp lại khoảng cách --- */
+.card .roman-sm {
+  margin-top: 0;
+}
+
+/* --- Highlight card (combo) có icon nổi hơn --- */
+.card-highlight .card-icon {
+  filter: drop-shadow(0 2px 8px rgba(212,175,55,0.4));
+}
