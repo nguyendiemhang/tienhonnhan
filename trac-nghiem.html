@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài trắc nghiệm — Khám phá tính cách &amp; giá trị sống | Tiền Hôn Nhân</title>
+  <meta name="description" content="Bài trắc nghiệm khám phá tính cách và giá trị sống — bước đầu tiên trong Mục I của chương trình Tiền Hôn Nhân.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bài trắc nghiệm — Khám phá tính cách &amp; giá trị sống">
+  <meta property="og:description" content="Bước đầu tiên trong Mục I — Thấu hiểu bản thân & đối phương.">
+  <meta property="og:url" content="https://tienhonnhan.com.vn/trac-nghiem">
+  <meta property="og:image" content="https://tienhonnhan.com.vn/assets/images/og-image.jpg">
+  <meta property="og:locale" content="vi_VN">
+
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Be+Vietnam+Pro:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="/" class="logo">Tiền Hôn Nhân<span>.</span></a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav">
+      <a href="/gioi-thieu">Giới thiệu</a>
+      <a href="/thau-hieu-ban-than">Thấu hiểu</a>
+      <a href="/giao-tiep-xung-dot">Giao tiếp</a>
+      <a href="/tai-chinh-phap-ly">Tài chính</a>
+      <a href="/suc-khoe-sinh-san">Sức khỏe</a>
+      <a href="/tham-van-dong-hanh">Tham vấn</a>
+      <a href="/combo">Combo</a>
+      <a href="/dat-lich" class="nav-cta">Đặt lịch</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <span class="roman">BÀI TRẮC NGHIỆM</span>
+      <h1>Khám phá tính cách &amp; giá trị sống</h1>
+      <p class="script">Hành trình bắt đầu từ việc hiểu chính mình</p>
+    </section>
+
+    <!-- GIỚI THIỆU -->
+    <section class="section">
+      <div class="container narrow center">
+        <span class="script">Trước khi bắt đầu</span>
+        <h2 style="margin: 10px 0 20px;">Bài trắc nghiệm này dành cho ai</h2>
+        <p>Bài trắc nghiệm này là <strong>bước đầu tiên trong Mục I — Thấu hiểu bản thân &amp; đối phương</strong>. Hai bạn sẽ làm riêng trên hai thiết bị, sau đó hệ thống ghép kết quả lại để chị giải mã trong buổi học đầu tiên.</p>
+      </div>
+    </section>
+
+    <!-- CÁCH HOẠT ĐỘNG -->
+    <section class="section section-cream">
+      <div class="container">
+        <div class="center" style="margin-bottom: 50px;">
+          <span class="script">Cách hoạt động</span>
+          <h2 style="margin-top: 10px;">3 bước đơn giản</h2>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <span class="step-num">1</span>
+            <h3>Mỗi người làm riêng</h3>
+            <p>Hai bạn làm bài trên hai thiết bị khác nhau. Không xem đáp án của nhau — để kết quả được tự nhiên nhất.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-num">2</span>
+            <h3>Hệ thống ghép kết quả</h3>
+            <p>Sau khi cả hai hoàn thành, hệ thống ghép hai bộ kết quả lại — chỉ chị mới xem được, không công khai.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-num">3</span>
+            <h3>Chị giải mã trong buổi học</h3>
+            <p>Buổi học Mục I đầu tiên: chị cùng hai bạn đọc kết quả, phân tích điểm chung và điểm khác biệt.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORM ĐĂNG KÝ LÀM BÀI -->
+    <section class="section">
+      <div class="container narrow" style="max-width: 640px;">
+
+        <div class="center" style="margin-bottom: 40px;">
+          <span class="script">Bắt đầu</span>
+          <h2 style="margin-top: 10px;">Đăng ký làm bài</h2>
+          <p style="margin-top: 12px;">Điền thông tin để nhận link làm bài qua email. Mỗi người điền một lần.</p>
+        </div>
+
+        <!-- ⚠️ THAY action BẰNG LINK FORMSPREE HOẶC GOOGLE FORM CỦA CHỊ -->
+        <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+          <div class="form-row">
+            <label for="name">Họ tên *</label>
+            <input type="text" id="name" name="name" required placeholder="Nguyễn Thị A">
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required placeholder="email@example.com">
+            <p class="field-hint">Link làm bài sẽ được gửi về email này.</p>
+          </div>
+
+          <div class="form-row">
+            <label for="role">Bạn là *</label>
+            <select id="role" name="role" required>
+              <option value="">-- Chọn một --</option>
+              <option value="vo-chong-tuong-lai">Vợ/chồng tương lai (làm cùng nhau)</option>
+              <option value="vo">Vợ (làm riêng)</option>
+              <option value="chong">Chồng (làm riêng)</option>
+              <option value="doc-than">Đang độc thân, muốn hiểu mình trước</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="partner-email">Email của người bạn đời (không bắt buộc)</label>
+            <input type="email" id="partner-email" name="partner-email" placeholder="partner@example.com">
+            <p class="field-hint">Nếu có, chị sẽ gửi link làm bài cho cả hai người cùng lúc.</p>
+          </div>
+
+          <div class="form-row">
+            <label class="checkbox-label">
+              <input type="checkbox" name="consent" required>
+              <span>Tôi đồng ý với <a href="/chinh-sach-bao-mat" style="color: var(--copper);">Chính sách bảo mật</a></span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-gold" style="width: 100%;">Nhận link làm bài</button>
+
+          <p class="form-note">Link sẽ được gửi trong vòng 24 giờ. Nếu chưa nhận được, kiểm tra hộp thư spam hoặc email lại cho chị.</p>
+        </form>
+
+      </div>
+    </section>
+
+    <!-- BẢO MẬT -->
+    <section class="section section-cream">
+      <div class="container narrow center">
+        <div class="privacy-note" style="max-width: 640px; margin: 0 auto;">
+          <strong>🔒 Kết quả của bạn được bảo mật</strong>
+          <p>Kết quả trắc nghiệm chỉ có chị và hai bạn xem. Không công khai, không chia sẻ với bất kỳ ai, kể cả gia đình. Sau buổi học Mục I, hai bạn có thể yêu cầu xóa dữ liệu bất kỳ lúc nào.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA CUỐI -->
+    <section class="section section-navy">
+      <div class="container narrow center">
+        <span class="script">Chưa học Mục I?</span>
+        <h2 style="color: var(--white); margin: 12px 0 24px;">Tìm hiểu thêm về Mục I</h2>
+        <p style="color: var(--cream); opacity: 0.9;">Bài trắc nghiệm này là một phần trong Mục I — Thấu hiểu bản thân &amp; đối phương. Xem chi tiết mục này để hiểu rõ hơn.</p>
+        <div class="hero-actions" style="justify-content: center; margin-top: 28px;">
+          <a href="/thau-hieu-ban-than" class="btn btn-gold">Xem Mục I</a>
+          <a href="/dat-lich" class="btn btn-outline-light">Đặt lịch tư vấn</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p class="script">Đồng hành cùng bạn trên hành trình về nhà</p>
+    <p class="footer-contact">Email: <a href="mailto:tienhonnhan.com.vn@gmail.com">tienhonnhan.com.vn@gmail.com</a></p>
+    <p class="footer-social">
+      <a href="#">Facebook</a> · <a href="#">Instagram</a> · <a href="#">TikTok</a>
+    </p>
+    <p class="footer-links">
+      <a href="/chinh-sach-bao-mat">Chính sách bảo mật</a> ·
+      <a href="/dieu-khoan-su-dung">Điều khoản sử dụng</a> ·
+      <a href="/chinh-sach-hoan-tien">Chính sách hoàn tiền</a> ·
+      <a href="/sitemap">Sitemap</a>
+    </p>
+    <div class="footer-copy">© 2025 Tiền Hôn Nhân · tienhonnhan.com.vn</div>
+  </footer>
+
+  <div class="floating-contact">
+    <a href="https://zalo.me/" target="_blank" rel="noopener" class="float-btn float-zalo">Zalo</a>
+    <a href="https://m.me/" target="_blank" rel="noopener" class="float-btn float-mess">💬</a>
+  </div>
+
+  <script src="/main.js"></script>
+</body>
+</html>
