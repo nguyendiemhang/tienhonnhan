@@ -1327,7 +1327,7 @@ img { max-width: 100%; display: block; }
 /* --- Giới hạn logo trong header --- */
 .site-header .logo img,
 .header .logo img {
-  max-height: 72px;
+  max-height: 150px;
   width: auto;
   display: block;
 }
