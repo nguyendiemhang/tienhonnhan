@@ -171,9 +171,9 @@ img { max-width: 100%; display: block; }
 .page-hero {
   position: relative;
   overflow: hidden;
-  background: var(--navy);
+  background: var(--black);
   color: var(--white);
-  padding: 80px 5% 60px;
+  padding: 100px 5% 80px;
   text-align: center;
 }
 .page-hero > * {
@@ -190,6 +190,33 @@ img { max-width: 100%; display: block; }
   display: block;
 }
 .page-hero .script { color: var(--pink-2); margin-top: 10px; }
+
+/* Vệt sáng — giống hệt hero trang chủ */
+.page-hero::before,
+.page-hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+.page-hero::before {
+  width: 400px;
+  height: 400px;
+  background: var(--copper);
+  opacity: 0.25;
+  top: -100px;
+  left: -100px;
+}
+.page-hero::after {
+  width: 350px;
+  height: 350px;
+  background: var(--pink);
+  opacity: 0.18;
+  bottom: -120px;
+  right: -80px;
+}
 
 /* ============================================
    BỔ SUNG CHO INDEX — thêm vào cuối main.css
