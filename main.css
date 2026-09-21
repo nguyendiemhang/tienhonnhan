@@ -890,3 +890,42 @@ img { max-width: 100%; display: block; }
   margin-top: 6px;
   font-style: italic;
 }
+/* ============================================
+   BỔ SUNG — Hiệu ứng cho main.js
+   ============================================ */
+
+/* --- Nút menu mobile: biến thành X khi active --- */
+.nav-toggle.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* --- Menu item đang active --- */
+.nav a.active {
+  color: var(--gold);
+}
+.nav a.active::after {
+  width: 100%;
+}
+.nav a.nav-cta.active {
+  color: var(--navy) !important;
+}
+
+/* --- Header khi cuộn --- */
+.site-header.scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(8px);
+}
+
+/* --- Chống nháy fade-up khi JS chưa load --- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
