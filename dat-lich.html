@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đặt lịch &amp; Liên hệ — Tiền Hôn Nhân</title>
+  <meta name="description" content="Đặt lịch trò chuyện cùng Tiền Hôn Nhân. Buổi trò chuyện đầu tiên miễn phí — chỉ để hai bên hiểu nhau.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Đặt lịch &amp; Liên hệ — Tiền Hôn Nhân">
+  <meta property="og:description" content="Đặt lịch trò chuyện — buổi đầu tiên miễn phí.">
+  <meta property="og:url" content="https://tienhonnhan.com.vn/dat-lich">
+  <meta property="og:image" content="https://tienhonnhan.com.vn/assets/images/og-image.jpg">
+  <meta property="og:locale" content="vi_VN">
+
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Be+Vietnam+Pro:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="/" class="logo">Tiền Hôn Nhân<span>.</span></a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav">
+      <a href="/gioi-thieu">Giới thiệu</a>
+      <a href="/thau-hieu-ban-than">Thấu hiểu</a>
+      <a href="/giao-tiep-xung-dot">Giao tiếp</a>
+      <a href="/tai-chinh-phap-ly">Tài chính</a>
+      <a href="/suc-khoe-sinh-san">Sức khỏe</a>
+      <a href="/tham-van-dong-hanh">Tham vấn</a>
+      <a href="/combo">Combo</a>
+      <a href="/dat-lich" class="nav-cta">Đặt lịch</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <span class="roman">ĐẶT LỊCH</span>
+      <h1>Bắt đầu hành trình của bạn</h1>
+      <p class="script">Chỉ cần một bước, phần còn lại để em đồng hành</p>
+    </section>
+
+    <!-- GIỚI THIỆU + FORM -->
+    <section class="section">
+      <div class="container">
+        <div class="contact-layout">
+
+          <!-- CỘT TRÁI: THÔNG TIN -->
+          <div class="contact-info">
+            <span class="script">Buổi đầu tiên miễn phí</span>
+            <h2 style="margin: 10px 0 20px;">Mình trò chuyện trước, rồi quyết định sau</h2>
+            <p>Buổi trò chuyện đầu tiên khoảng 20–30 phút, hoàn toàn miễn phí. Chị chỉ cần chia sẻ sơ qua câu chuyện của mình, em sẽ tư vấn gói phù hợp — không ép buộc, không cam kết.</p>
+
+            <div class="contact-methods">
+              <a href="mailto:tienhonnhan.com.vn@gmail.com" class="contact-method">
+                <span class="contact-icon">✉</span>
+                <div>
+                  <span class="contact-label">Email</span>
+                  <span class="contact-value">tienhonnhan.com.vn@gmail.com</span>
+                </div>
+              </a>
+
+              <a href="https://zalo.me/" target="_blank" rel="noopener" class="contact-method">
+                <span class="contact-icon" style="background: linear-gradient(135deg, #0068FF, #0047B3); color: white;">Z</span>
+                <div>
+                  <span class="contact-label">Zalo</span>
+                  <span class="contact-value">Nhắn tin qua Zalo</span>
+                </div>
+              </a>
+
+              <a href="https://m.me/" target="_blank" rel="noopener" class="contact-method">
+                <span class="contact-icon" style="background: linear-gradient(135deg, #00B2FF, #006AFF); color: white;">💬</span>
+                <div>
+                  <span class="contact-label">Messenger</span>
+                  <span class="contact-value">Chat qua Facebook</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="privacy-note">
+              <strong>🔒 Cam kết bảo mật</strong>
+              <p>Mọi thông tin chị chia sẻ đều được bảo mật tuyệt đối. Không chia sẻ với bất kỳ ai, kể cả gia đình hai bạn.</p>
+            </div>
+          </div>
+
+          <!-- CỘT PHẢI: FORM -->
+          <div class="contact-form-wrap">
+            <h3 style="margin-bottom: 24px;">Điền form đặt lịch</h3>
+
+            <!-- ⚠️ THAY action BẰNG LINK FORMSPREE CỦA CHỊ -->
+            <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+              <div class="form-row">
+                <label for="name">Họ tên *</label>
+                <input type="text" id="name" name="name" required placeholder="Nguyễn Thị A">
+              </div>
+
+              <div class="form-row">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required placeholder="email@example.com">
+              </div>
+
+              <div class="form-row">
+                <label for="phone">Số điện thoại *</label>
+                <input type="tel" id="phone" name="phone" required placeholder="0901 234 567">
+              </div>
+
+              <div class="form-row">
+                <label for="package">Bạn quan tâm đến *</label>
+                <select id="package" name="package" required>
+                  <option value="">-- Chọn một --</option>
+                  <option value="tu-van">Chưa rõ — cần tư vấn thêm</option>
+                  <option value="full">Gói đầy đủ (5 mục)</option>
+                  <option value="rut-gon">Gói rút gọn (chọn mục)</option>
+                  <option value="tham-van">Tham vấn riêng (Mục V)</option>
+                  <option value="muc-1">Mục I — Thấu hiểu bản thân</option>
+                  <option value="muc-2">Mục II — Giao tiếp &amp; xung đột</option>
+                  <option value="muc-3">Mục III — Tài chính &amp; pháp lý</option>
+                  <option value="muc-4">Mục IV — Sức khỏe sinh sản</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <label for="time">Thời gian thuận tiện</label>
+                <select id="time" name="time">
+                  <option value="">-- Chọn khung giờ --</option>
+                  <option value="sang-t2-t6">Sáng thứ 2 – thứ 6 (9h – 12h)</option>
+                  <option value="chieu-t2-t6">Chiều thứ 2 – thứ 6 (14h – 18h)</option>
+                  <option value="toi-t2-t6">Tối thứ 2 – thứ 6 (19h – 21h)</option>
+                  <option value="cuoi-tuan">Cuối tuần (linh hoạt)</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <label for="message">Chia sẻ thêm (không bắt buộc)</label>
+                <textarea id="message" name="message" rows="4" placeholder="Chị có thể chia sẻ sơ qua câu chuyện của mình — em sẽ chuẩn bị tốt hơn cho buổi trò chuyện."></textarea>
+              </div>
+
+              <div class="form-row">
+                <label class="checkbox-label">
+                  <input type="checkbox" name="consent" required>
+                  <span>Tôi đồng ý với <a href="/chinh-sach-bao-mat" style="color: var(--copper);">Chính sách bảo mật</a></span>
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-gold" style="width: 100%;">Gửi đặt lịch</button>
+
+              <p class="form-note">Sau khi gửi, em sẽ phản hồi trong vòng 24 giờ qua email hoặc Zalo.</p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CHUẨN BỊ GÌ TRƯỚC BUỔI TRÒ CHUYỆN -->
+    <section class="section section-cream">
+      <div class="container narrow">
+        <div class="center" style="margin-bottom: 40px;">
+          <span class="script">Trước buổi hẹn</span>
+          <h2 style="margin-top: 10px;">Chuẩn bị gì cho buổi đầu tiên</h2>
+        </div>
+
+        <div class="prep-grid">
+          <div class="prep-item">
+            <span class="prep-num">01</span>
+            <h3>Không cần chuẩn bị gì cả</h3>
+            <p>Cứ đến với câu chuyện của mình. Em sẽ dẫn dắt buổi trò chuyện.</p>
+          </div>
+          <div class="prep-item">
+            <span class="prep-num">02</span>
+            <h3>Nếu được, cả hai cùng tham gia</h3>
+            <p>Buổi đầu tiên nên có cả hai bạn — để em hiểu rõ bối cảnh chung.</p>
+          </div>
+          <div class="prep-item">
+            <span class="prep-num">03</span>
+            <h3>Chọn không gian yên tĩnh</h3>
+            <p>Nếu họp online, chọn nơi riêng tư để cả hai thoải mái chia sẻ.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA CUỐI -->
+    <section class="section section-navy">
+      <div class="container narrow center">
+        <span class="script">Chưa sẵn sàng đặt lịch?</span>
+        <h2 style="color: var(--white); margin: 12px 0 24px;">Có thể xem qua các gói trước</h2>
+        <p style="color: var(--cream); opacity: 0.9;">Hoặc đọc thêm về chị để hiểu mình đang trò chuyện với ai.</p>
+        <div class="hero-actions" style="justify-content: center; margin-top: 28px;">
+          <a href="/combo" class="btn btn-gold">Xem các gói</a>
+          <a href="/gioi-thieu" class="btn btn-outline-light">Về Tiền Hôn Nhân</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p class="script">Đồng hành cùng bạn trên hành trình về nhà</p>
+    <p class="footer-contact">Email: <a href="mailto:tienhonnhan.com.vn@gmail.com">tienhonnhan.com.vn@gmail.com</a></p>
+    <p class="footer-social">
+      <a href="#">Facebook</a> · <a href="#">Instagram</a> · <a href="#">TikTok</a>
+    </p>
+    <p class="footer-links">
+      <a href="/chinh-sach-bao-mat">Chính sách bảo mật</a> ·
+      <a href="/dieu-khoan-su-dung">Điều khoản sử dụng</a> ·
+      <a href="/chinh-sach-hoan-tien">Chính sách hoàn tiền</a> ·
+      <a href="/sitemap">Sitemap</a>
+    </p>
+    <div class="footer-copy">© 2025 Tiền Hôn Nhân · tienhonnhan.com.vn</div>
+  </footer>
+
+  <div class="floating-contact">
+    <a href="https://zalo.me/" target="_blank" rel="noopener" class="float-btn float-zalo">Zalo</a>
+    <a href="https://m.me/" target="_blank" rel="noopener" class="float-btn float-mess">💬</a>
+  </div>
+
+  <script src="/main.js"></script>
+</body>
+</html>
