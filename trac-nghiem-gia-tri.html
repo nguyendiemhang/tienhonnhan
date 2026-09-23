@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trắc nghiệm Giá trị sống — Tiền Hôn Nhân</title>
+  <meta name="description" content="Bài trắc nghiệm giá trị sống và ưu tiên — bước thứ hai trong Mục I.">
+  <meta name="robots" content="noindex, follow">
+
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Be+Vietnam+Pro:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="/" class="logo">
+      <img src="LogoTienhonnhan.png" alt="Gạch Nối — Tiền Hôn Nhân" />
+    </a>
+    <button class="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav">
+      <a href="/gioi-thieu">Giới thiệu</a>
+      <a href="/thau-hieu-ban-than">Thấu hiểu</a>
+      <a href="/giao-tiep-xung-dot">Giao tiếp</a>
+      <a href="/tai-chinh-phap-ly">Tài chính</a>
+      <a href="/suc-khoe-sinh-san">Sức khỏe</a>
+      <a href="/tham-van-dong-hanh">Tham vấn</a>
+      <a href="/combo">Combo</a>
+      <a href="/dat-lich" class="nav-cta">Đặt lịch</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <span class="roman">BỘ 2</span>
+      <h1>Giá trị sống &amp; Ưu tiên</h1>
+      <p class="script">Điều gì thật sự quan trọng với bạn</p>
+    </section>
+
+    <section class="section">
+      <div class="container narrow quiz-container">
+
+        <!-- INTRO -->
+        <div id="quiz-intro" class="quiz-stage">
+          <div class="quiz-intro-card">
+            <span class="script-soft">Trước khi bắt đầu</span>
+            <h2 style="margin: 12px 0 20px;">Bài trắc nghiệm Giá trị sống</h2>
+
+            <p>Bài gồm <strong>3 phần</strong>, làm trong khoảng 15–20 phút:</p>
+            <ul class="quiz-scale-legend" style="margin: 16px 0;">
+              <li><span class="scale-num">A</span> Chấm điểm 15 giá trị theo thang 1–5</li>
+              <li><span class="scale-num">B</span> Chọn 5 giá trị quan trọng nhất và xếp hạng</li>
+              <li><span class="scale-num">C</span> 6 câu hỏi tình huống (trả lời tự luận)</li>
+            </ul>
+
+            <div class="quiz-note">
+              <strong>💡 Lưu ý quan trọng</strong>
+              <p>Không có câu trả lời đúng/sai. Hãy trả lời theo bản thân thật của bạn. Kết quả chỉ có bạn và chuyên gia tư vấn xem được.</p>
+            </div>
+
+            <button class="btn btn-gold" onclick="startQuiz()" style="margin-top: 28px; width: 100%;">Bắt đầu làm bài</button>
+          </div>
+        </div>
+
+        <!-- PLAYING -->
+        <div id="quiz-playing" class="quiz-stage" style="display: none;">
+
+          <div class="quiz-progress">
+            <div class="quiz-progress-info">
+              <span id="quiz-group-label">Phần A · Chấm điểm giá trị</span>
+              <span id="quiz-count-label">Câu 1/15</span>
+            </div>
+            <div class="quiz-progress-bar">
+              <div id="quiz-progress-fill" class="quiz-progress-fill" style="width: 4%;"></div>
+            </div>
+          </div>
+
+          <div id="quiz-question" class="quiz-question-card"></div>
+
+          <div class="quiz-nav">
+            <button id="btn-prev" class="btn btn-outline" onclick="prevQuestion()" disabled>← Quay lại</button>
+            <button id="btn-next" class="btn btn-gold" onclick="nextQuestion()" disabled>Tiếp theo →</button>
+          </div>
+
+        </div>
+
+        <!-- INFO -->
+        <div id="quiz-info" class="quiz-stage" style="display: none;">
+          <div class="quiz-info-card">
+            <span class="script-soft">Gần xong rồi</span>
+            <h2 style="margin: 12px 0 20px;">Điền thông tin để nhận kết quả</h2>
+
+            <form id="quiz-form" class="contact-form" style="margin-top: 24px;">
+              <div class="form-row">
+                <label for="q-name">Họ tên *</label>
+                <input type="text" id="q-name" name="name" required placeholder="Nguyễn Thị A">
+              </div>
+
+              <div class="form-row">
+                <label for="q-email">Email *</label>
+                <input type="email" id="q-email" name="email" required placeholder="email@example.com">
+              </div>
+
+              <div class="form-row">
+                <label for="q-code">Mã cặp đôi *</label>
+                <input type="text" id="q-code" name="couple_code" required placeholder="VD: CAP-2025-001" style="text-transform: uppercase;">
+                <p class="field-hint">Mã này do chị cung cấp khi bạn đăng ký Mục I. Hai người phải điền <strong>cùng một mã</strong>.</p>
+              </div>
+
+              <div class="form-row">
+                <label for="q-role">Bạn là *</label>
+                <select id="q-role" name="role" required>
+                  <option value="">-- Chọn một --</option>
+                  <option value="vo">Vợ / Vợ tương lai</option>
+                  <option value="chong">Chồng / Chồng tương lai</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <label class="checkbox-label">
+                  <input type="checkbox" name="consent" required>
+                  <span>Tôi đồng ý với <a href="/chinh-sach-bao-mat" style="color: var(--copper);">Chính sách bảo mật</a></span>
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-gold" style="width: 100%; margin-top: 8px;">Gửi kết quả</button>
+
+              <p class="form-note">Sau khi gửi, chị sẽ phản hồi trong vòng 24 giờ.</p>
+            </form>
+          </div>
+        </div>
+
+        <!-- DONE -->
+        <div id="quiz-done" class="quiz-stage" style="display: none;">
+          <div class="quiz-done-card center">
+            <span class="thanks-icon">♥</span>
+            <h2 style="margin: 20px 0 12px;">Cảm ơn bạn đã hoàn thành</h2>
+            <p class="script" style="font-size: 1.3rem;">Kết quả đã được gửi đi an toàn</p>
+            <p style="margin-top: 20px;">Chị sẽ ghép kết quả của bạn với người bạn đời và phản hồi trong vòng <strong>24 giờ</strong>.</p>
+            <div class="hero-actions" style="justify-content: center; margin-top: 32px;">
+              <a href="/" class="btn btn-gold">Về trang chủ</a>
+              <a href="/dat-lich" class="btn btn-outline">Đặt lịch giải mã</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p class="script">Đồng hành cùng bạn trên hành trình về nhà</p>
+    <p class="footer-contact">Email: <a href="mailto:tienhonnhan.com.vn@gmail.com">tienhonnhan.com.vn@gmail.com</a></p>
+    <p class="footer-social">
+      <a href="#">Facebook</a> · <a href="#">Instagram</a> · <a href="#">TikTok</a>
+    </p>
+    <p class="footer-links">
+      <a href="/chinh-sach-bao-mat">Chính sách bảo mật</a> ·
+      <a href="/dieu-khoan-su-dung">Điều khoản sử dụng</a> ·
+      <a href="/chinh-sach-hoan-tien">Chính sách hoàn tiền</a> ·
+      <a href="/sitemap">Sitemap</a>
+    </p>
+    <div class="footer-copy">© 2025 Tiền Hôn Nhân · tienhonnhan.com.vn</div>
+  </footer>
+
+  <script src="/main.js"></script>
+
+  <script>
+  /* ============================================================
+     GIÁ TRỊ SỐNG QUIZ
+     ============================================================ */
+
+  // Phần A — 15 giá trị, chấm 1-5
+  const PART_A_VALUES = [
+    'Sự nghiệp, thành tựu trong công việc',
+    'Ổn định tài chính, có tích lũy',
+    'Có con, làm cha/mẹ',
+    'Gắn bó, trách nhiệm với gia đình hai bên (nội/ngoại)',
+    'Tự do cá nhân, có không gian riêng',
+    'Tôn giáo, đời sống tâm linh',
+    'Sức khỏe thể chất, lối sống lành mạnh',
+    'Học hỏi, phát triển bản thân liên tục',
+    'Trải nghiệm, du lịch, khám phá',
+    'Có nhà riêng, ổn định nơi ở',
+    'Địa vị xã hội, được người khác công nhận',
+    'Sự trung thực, minh bạch trong các mối quan hệ',
+    'Truyền thống gia đình, giữ gìn nề nếp',
+    'Cân bằng công việc — cuộc sống',
+    'Cống hiến cho cộng đồng, làm điều có ý nghĩa cho xã hội'
+  ];
+
+  // Phần C — 6 câu tự luận
+  const PART_C_QUESTIONS = [
+    'Nếu công ty đề nghị bạn một vị trí tốt hơn nhưng phải chuyển sang thành phố khác, xa gia đình hai bên — bạn sẽ quyết định thế nào? Bạn mong đối phương phản ứng ra sao?',
+    'Nếu vợ/chồng bạn muốn dùng một khoản tiền lớn để đầu tư vào việc học/phát triển bản thân thay vì tiết kiệm, bạn cảm thấy thế nào?',
+    'Nếu bố mẹ một bên cần hỗ trợ tài chính thường xuyên, bạn nghĩ trách nhiệm này nên chia sẻ ra sao giữa hai vợ chồng?',
+    'Bạn hình dung một ngày cuối tuần lý tưởng của gia đình mình là như thế nào? (đi chơi, ở nhà, thăm gia đình, làm việc riêng...)',
+    'Nếu phải chọn giữa "có con sớm, ổn định sự nghiệp sau" và "ổn định sự nghiệp trước, có con muộn hơn" — bạn nghiêng về hướng nào? Vì sao?',
+    'Khi bất đồng về một quyết định lớn (mua nhà, nghỉ việc, chuyển chỗ ở...), bạn nghĩ ai nên là người quyết định cuối cùng, hay cả hai phải đồng thuận tuyệt đối?'
+  ];
+
+  // State
+  let partA = new Array(PART_A_VALUES.length).fill(null);  // 1-5
+  let partB = new Array(5).fill(null);                     // chỉ số giá trị (0-14), xếp hạng 1-5
+  let partC = new Array(PART_C_QUESTIONS.length).fill(''); // text
+
+  let stage = 'A';   // 'A', 'B', 'C'
+  let currentIndex = 0;
+
+  const TOTAL_A = PART_A_VALUES.length;
+  const TOTAL_C = PART_C_QUESTIONS.length;
+  const TOTAL_ALL = TOTAL_A + 1 + TOTAL_C;   // A + B (1 màn hình) + C
+
+  function showStage(id) {
+    ['quiz-intro', 'quiz-playing', 'quiz-info', 'quiz-done'].forEach(s => {
+      document.getElementById(s).style.display = (s === id) ? '' : 'none';
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function startQuiz() {
+    showStage('quiz-playing');
+    stage = 'A';
+    currentIndex = 0;
+    render();
+  }
+
+  function getTotalDone() {
+    if (stage === 'A') return currentIndex;
+    if (stage === 'B') return TOTAL_A;
+    if (stage === 'C') return TOTAL_A + 1 + currentIndex;
+    return 0;
+  }
+
+  function render() {
+    const q = document.getElementById('quiz-question');
+    const totalDone = getTotalDone();
+    const percent = Math.round(((totalDone + 1) / TOTAL_ALL) * 100);
+
+    document.getElementById('quiz-progress-fill').style.width = percent + '%';
+
+    if (stage === 'A') {
+      document.getElementById('quiz-group-label').textContent = 'Phần A · Chấm điểm giá trị';
+      document.getElementById('quiz-count-label').textContent = `Câu ${currentIndex + 1}/${TOTAL_A}`;
+      renderPartA();
+    } else if (stage === 'B') {
+      document.getElementById('quiz-group-label').textContent = 'Phần B · Xếp hạng ưu tiên';
+      document.getElementById('quiz-count-label').textContent = 'Chọn 5 giá trị';
+      renderPartB();
+    } else if (stage === 'C') {
+      document.getElementById('quiz-group-label').textContent = 'Phần C · Câu hỏi tình huống';
+      document.getElementById('quiz-count-label').textContent = `Câu ${currentIndex + 1}/${TOTAL_C}`;
+      renderPartC();
+    }
+
+    // Nút điều hướng
+    const btnPrev = document.getElementById('btn-prev');
+    const btnNext = document.getElementById('btn-next');
+    btnPrev.disabled = (stage === 'A' && currentIndex === 0);
+
+    let canNext = false;
+    if (stage === 'A') canNext = partA[currentIndex] !== null;
+    if (stage === 'B') canNext = partB.every(v => v !== null) && new Set(partB).size === 5;
+    if (stage === 'C') canNext = partC[currentIndex].trim().length > 0;
+    btnNext.disabled = !canNext;
+
+    // Đổi text nút cuối
+    if (stage === 'C' && currentIndex === TOTAL_C - 1) {
+      btnNext.textContent = 'Hoàn thành →';
+    } else {
+      btnNext.textContent = 'Tiếp theo →';
+    }
+  }
+
+  function renderPartA() {
+    const q = document.getElementById('quiz-question');
+    const scaleLabels = ['Không quan trọng', 'Ít quan trọng', 'Bình thường', 'Quan trọng', 'Rất quan trọng'];
+    let html = `<p class="quiz-question-text">${PART_A_VALUES[currentIndex]}</p>`;
+    html += '<div class="quiz-options">';
+    for (let i = 1; i <= 5; i++) {
+      const checked = partA[currentIndex] === i ? 'checked' : '';
+      html += `
+        <label class="quiz-option">
+          <input type="radio" name="qa${currentIndex}" value="${i}" ${checked} onchange="selectA(${i})">
+          <span class="quiz-option-num">${i}</span>
+          <span class="quiz-option-label">${scaleLabels[i-1]}</span>
+        </label>
+      `;
+    }
+    html += '</div>';
+    q.innerHTML = html;
+  }
+
+  function renderPartB() {
+    const q = document.getElementById('quiz-question');
+    let html = `<p class="quiz-question-text">Chọn 5 giá trị quan trọng nhất với bạn, xếp hạng từ 1 (quan trọng nhất) đến 5.</p>`;
+    html += '<p style="font-size:0.9rem; opacity:0.75; margin-bottom:20px;">Bấm số 1–5 vào từng giá trị bạn chọn. Không chọn trùng số.</p>';
+
+    html += '<div class="part-b-list">';
+    PART_A_VALUES.forEach((val, idx) => {
+      html += `<div class="part-b-item">
+        <span class="part-b-text">${val}</span>
+        <div class="part-b-ranks">`;
+      for (let r = 1; r <= 5; r++) {
+        const checked = partB[r-1] === idx ? 'checked' : '';
+        const disabled = partB[r-1] !== null && partB[r-1] !== idx ? 'disabled' : '';
+        html += `<label class="part-b-rank ${checked ? 'active' : ''} ${disabled ? 'disabled' : ''}">
+          <input type="radio" name="pb${idx}" value="${r}" ${checked} ${disabled} onchange="selectB(${r-1}, ${idx})">
+          <span>${r}</span>
+        </label>`;
+      }
+      html += `</div></div>`;
+    });
+    html += '</div>';
+    q.innerHTML = html;
+  }
+
+  function renderPartC() {
+    const q = document.getElementById('quiz-question');
+    let html = `<p class="quiz-question-text">${PART_C_QUESTIONS[currentIndex]}</p>`;
+    html += `<textarea class="part-c-textarea" placeholder="Chia sẻ câu trả lời của bạn..." oninput="selectC(this.value)">${partC[currentIndex]}</textarea>`;
+    q.innerHTML = html;
+  }
+
+  function selectA(val) {
+    partA[currentIndex] = val;
+    render();
+  }
+
+  function selectB(rankIndex, valueIndex) {
+    // Nếu value này đã được gán cho rank khác → bỏ
+    for (let i = 0; i < 5; i++) {
+      if (i !== rankIndex && partB[i] === valueIndex) partB[i] = null;
+    }
+    partB[rankIndex] = valueIndex;
+    render();
+  }
+
+  function selectC(val) {
+    partC[currentIndex] = val;
+    // Chỉ enable nút khi có text, không re-render toàn bộ để tránh mất focus
+    document.getElementById('btn-next').disabled = val.trim().length === 0;
+  }
+
+  function nextQuestion() {
+    if (stage === 'A') {
+      if (currentIndex < TOTAL_A - 1) {
+        currentIndex++;
+        render();
+      } else {
+        stage = 'B';
+        render();
+      }
+    } else if (stage === 'B') {
+      stage = 'C';
+      currentIndex = 0;
+      render();
+    } else if (stage === 'C') {
+      if (currentIndex < TOTAL_C - 1) {
+        currentIndex++;
+        render();
+      } else {
+        showStage('quiz-info');
+      }
+    }
+  }
+
+  function prevQuestion() {
+    if (stage === 'A') {
+      if (currentIndex > 0) {
+        currentIndex--;
+        render();
+      }
+    } else if (stage === 'B') {
+      stage = 'A';
+      currentIndex = TOTAL_A - 1;
+      render();
+    } else if (stage === 'C') {
+      if (currentIndex > 0) {
+        currentIndex--;
+        render();
+      } else {
+        stage = 'B';
+        render();
+      }
+    }
+  }
+
+  /* SUBMIT */
+  document.getElementById('quiz-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+
+    // Part A
+    const partAStr = PART_A_VALUES.map((v, i) => `${v} → ${partA[i]}/5`).join('\n');
+    formData.append('part_a_scores', partAStr);
+
+    // Part B
+    const partBStr = partB.map((valIdx, rank) => `#${rank + 1}: ${valIdx !== null ? PART_A_VALUES[valIdx] : '(chưa chọn)'}`).join('\n');
+    formData.append('part_b_ranking', partBStr);
+
+    // Part C
+    const partCStr = PART_C_QUESTIONS.map((q, i) => `Q${i + 1}: ${q}\n→ ${partC[i] || '(bỏ trống)'}`).join('\n\n');
+    formData.append('part_c_answers', partCStr);
+
+    formData.append('quiz_type', 'Giá trị sống');
+
+    // ⚠️ CHỊ THAY YOUR_FORM_ID BẰNG ID THẬT
+    fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+      if (response.ok) showStage('quiz-done');
+      else alert('Có lỗi xảy ra. Vui lòng thử lại.');
+    })
+    .catch(() => alert('Không kết nối được. Vui lòng kiểm tra mạng.'));
+  });
+  </script>
+
+</body>
+</html>
