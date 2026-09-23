@@ -59,15 +59,7 @@ img { max-width: 100%; display: block; }
   line-height: 1.5;
   letter-spacing: 0.01em;
 }
-/* Class mới — dùng cho dòng dẫn section cần đọc rõ */
-.script-soft {
-  font-family: var(--font-heading);
-  font-style: italic;
-  font-weight: 500;
-  color: var(--copper);
-  font-size: 1.3rem;
-  letter-spacing: 0.02em;
-}
+
 /* ============================================
    HEADER — dán vào mọi trang
    ============================================ */
