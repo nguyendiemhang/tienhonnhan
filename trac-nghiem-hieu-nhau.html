@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trắc nghiệm Mức độ hiểu nhau — Tiền Hôn Nhân</title>
+  <meta name="description" content="Bài kiểm tra mức độ hiểu nhau — 36 câu, mỗi câu trả lời 2 lần: cho chính mình và đoán đối phương.">
+  <meta name="robots" content="noindex, follow">
+
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Be+Vietnam+Pro:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="/" class="logo">
+      <img src="LogoTienhonnhan.png" alt="Gạch Nối — Tiền Hôn Nhân" />
+    </a>
+    <button class="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav">
+      <a href="/gioi-thieu">Giới thiệu</a>
+      <a href="/thau-hieu-ban-than">Thấu hiểu</a>
+      <a href="/giao-tiep-xung-dot">Giao tiếp</a>
+      <a href="/tai-chinh-phap-ly">Tài chính</a>
+      <a href="/suc-khoe-sinh-san">Sức khỏe</a>
+      <a href="/tham-van-dong-hanh">Tham vấn</a>
+      <a href="/combo">Combo</a>
+      <a href="/dat-lich" class="nav-cta">Đặt lịch</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <span class="roman">BỘ 3</span>
+      <h1>Mức độ hiểu nhau</h1>
+      <p class="script">Bạn hiểu người mình thương đến đâu</p>
+    </section>
+
+    <section class="section">
+      <div class="container narrow quiz-container">
+
+        <div id="quiz-intro" class="quiz-stage">
+          <div class="quiz-intro-card">
+            <span class="script-soft">Trước khi bắt đầu</span>
+            <h2 style="margin: 12px 0 20px;">Bài kiểm tra Mức độ hiểu nhau</h2>
+
+            <p>Bài gồm <strong>36 câu hỏi</strong>, thời gian khoảng 20–25 phút.</p>
+
+            <p style="margin-top: 16px;"><strong>Điểm đặc biệt:</strong> Mỗi câu bạn trả lời <strong>2 lần</strong>:</p>
+            <ul style="margin: 12px 0 16px 20px; line-height: 1.9;">
+              <li><strong>Cột trái:</strong> Câu trả lời thật của <em>bạn</em></li>
+              <li><strong>Cột phải:</strong> Bạn <em>đoán</em> đối phương sẽ trả lời gì</li>
+            </ul>
+
+            <p>Hai bạn làm riêng, không trao đổi trước. Sau đó chị sẽ đối chiếu 2 bảng để tính số câu đoán đúng — càng nhiều càng hiểu nhau.</p>
+
+            <div class="quiz-note">
+              <strong>💡 Không có đáp án đúng/sai</strong>
+              <p>Tỷ lệ đoán sai cao không phải dấu hiệu xấu — mà là danh sách chủ đề hai bạn cần nói chuyện trước khi cưới.</p>
+            </div>
+
+            <button class="btn btn-gold" onclick="startQuiz()" style="margin-top: 28px; width: 100%;">Bắt đầu làm bài</button>
+          </div>
+        </div>
+
+        <div id="quiz-playing" class="quiz-stage" style="display: none;">
+          <div class="quiz-progress">
+            <div class="quiz-progress-info">
+              <span id="quiz-group-label">Nhóm 1/6 · Thói quen sinh hoạt</span>
+              <span id="quiz-count-label">Câu 1/36</span>
+            </div>
+            <div class="quiz-progress-bar">
+              <div id="quiz-progress-fill" class="quiz-progress-fill" style="width: 3%;"></div>
+            </div>
+          </div>
+
+          <div id="quiz-question" class="quiz-question-card"></div>
+
+          <div class="quiz-nav">
+            <button id="btn-prev" class="btn btn-outline" onclick="prevQuestion()" disabled>← Quay lại</button>
+            <button id="btn-next" class="btn btn-gold" onclick="nextQuestion()" disabled>Tiếp theo →</button>
+          </div>
+        </div>
+
+        <div id="quiz-info" class="quiz-stage" style="display: none;">
+          <div class="quiz-info-card">
+            <span class="script-soft">Gần xong rồi</span>
+            <h2 style="margin: 12px 0 20px;">Điền thông tin để nhận kết quả</h2>
+
+            <form id="quiz-form" class="contact-form" style="margin-top: 24px;">
+              <div class="form-row">
+                <label for="q-name">Họ tên *</label>
+                <input type="text" id="q-name" name="name" required placeholder="Nguyễn Thị A">
+              </div>
+
+              <div class="form-row">
+                <label for="q-email">Email *</label>
+                <input type="email" id="q-email" name="email" required placeholder="email@example.com">
+              </div>
+
+              <div class="form-row">
+                <label for="q-code">Mã cặp đôi *</label>
+                <input type="text" id="q-code" name="couple_code" required placeholder="VD: CAP-2025-001" style="text-transform: uppercase;">
+              </div>
+
+              <div class="form-row">
+                <label for="q-role">Bạn là *</label>
+                <select id="q-role" name="role" required>
+                  <option value="">-- Chọn một --</option>
+                  <option value="vo">Vợ / Vợ tương lai</option>
+                  <option value="chong">Chồng / Chồng tương lai</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <label class="checkbox-label">
+                  <input type="checkbox" name="consent" required>
+                  <span>Tôi đồng ý với <a href="/chinh-sach-bao-mat" style="color: var(--copper);">Chính sách bảo mật</a></span>
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-gold" style="width: 100%; margin-top: 8px;">Gửi kết quả</button>
+              <p class="form-note">Sau khi gửi, chị sẽ phản hồi trong vòng 24 giờ.</p>
+            </form>
+          </div>
+        </div>
+
+        <div id="quiz-done" class="quiz-stage" style="display: none;">
+          <div class="quiz-done-card center">
+            <span class="thanks-icon">♥</span>
+            <h2 style="margin: 20px 0 12px;">Cảm ơn bạn đã hoàn thành</h2>
+            <p class="script" style="font-size: 1.3rem;">Kết quả đã được gửi đi an toàn</p>
+            <p style="margin-top: 20px;">Chị sẽ ghép kết quả của bạn với người bạn đời và phản hồi trong vòng <strong>24 giờ</strong>.</p>
+            <div class="hero-actions" style="justify-content: center; margin-top: 32px;">
+              <a href="/" class="btn btn-gold">Về trang chủ</a>
+              <a href="/dat-lich" class="btn btn-outline">Đặt lịch giải mã</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p class="script">Đồng hành cùng bạn trên hành trình về nhà</p>
+    <p class="footer-contact">Email: <a href="mailto:tienhonnhan.com.vn@gmail.com">tienhonnhan.com.vn@gmail.com</a></p>
+    <p class="footer-social">
+      <a href="#">Facebook</a> · <a href="#">Instagram</a> · <a href="#">TikTok</a>
+    </p>
+    <p class="footer-links">
+      <a href="/chinh-sach-bao-mat">Chính sách bảo mật</a> ·
+      <a href="/dieu-khoan-su-dung">Điều khoản sử dụng</a> ·
+      <a href="/chinh-sach-hoan-tien">Chính sách hoàn tiền</a> ·
+      <a href="/sitemap">Sitemap</a>
+    </p>
+    <div class="footer-copy">© 2025 Tiền Hôn Nhân · tienhonnhan.com.vn</div>
+  </footer>
+
+  <script src="/main.js"></script>
+
+  <script>
+  /* ============================================================
+     MỨC ĐỘ HIỂU NHAU QUIZ
+     ============================================================ */
+
+  const GROUPS = [
+    { name: 'Thói quen sinh hoạt & sở thích', questions: [
+      'Món ăn yêu thích nhất của bạn là gì?',
+      'Bạn thích dành một buổi tối rảnh để làm gì nhất?',
+      'Bạn là người thích dậy sớm hay thức khuya?',
+      'Khi căng thẳng, bạn thường làm gì để giải tỏa?',
+      'Bạn có sợ điều gì (con vật, độ cao, không gian kín...) không?',
+      'Kiểu kỳ nghỉ bạn thích nhất là gì — nghỉ dưỡng yên tĩnh hay khám phá năng động?',
+      'Bạn thích không gian sống gọn gàng tối giản hay thoải mái bừa bộn một chút?'
+    ]},
+    { name: 'Ước mơ, mục tiêu, nỗi lo', questions: [
+      'Mục tiêu lớn nhất bạn muốn đạt được trong 5 năm tới là gì?',
+      'Điều gì khiến bạn tự hào nhất về bản thân?',
+      'Điều gì bạn đang lo lắng nhất về tương lai?',
+      'Nếu không phải lo về tiền bạc, bạn sẽ muốn làm công việc gì?',
+      'Ước mơ nào bạn từng có mà chưa thực hiện được?',
+      'Bạn cảm thấy áp lực nhất về vấn đề gì trong cuộc sống hiện tại?',
+      'Điều gì bạn muốn đối phương hiểu về mình hơn?'
+    ]},
+    { name: 'Quan điểm nuôi dạy con', questions: [
+      'Bạn muốn có bao nhiêu con?',
+      'Bạn nghĩ nên dạy con theo hướng nghiêm khắc hay tự do?',
+      'Ai sẽ là người chăm sóc con chính trong 1-2 năm đầu — hay chia đều?',
+      'Bạn có quan điểm gì về việc đánh đòn/la mắng con khi con hư?',
+      'Điều gì bạn nhất định muốn con mình có được khi lớn lên?',
+      'Bạn nghĩ ông bà nội/ngoại nên tham gia vào việc nuôi dạy con ở mức độ nào?'
+    ]},
+    { name: 'Quan hệ với gia đình hai bên', questions: [
+      'Bạn nghĩ nên về thăm gia đình (nội/ngoại) với tần suất thế nào?',
+      'Nếu bố mẹ một bên cần ở cùng một thời gian, bạn cảm thấy thế nào?',
+      'Bạn thoải mái đến đâu khi gia đình đối phương góp ý vào chuyện riêng của hai vợ chồng?',
+      'Dịp lễ Tết, bạn nghĩ nên ưu tiên bên nội hay bên ngoại, hay chia đều?',
+      'Bạn có mối lo ngại nào về việc hòa hợp với gia đình đối phương không?',
+      'Bạn nghĩ nên hỗ trợ tài chính cho gia đình hai bên ở mức nào là hợp lý?'
+    ]},
+    { name: 'Tiền bạc & lối sống', questions: [
+      'Bạn là người thích tiết kiệm hay thích chi tiêu cho trải nghiệm?',
+      'Bạn nghĩ ai nên là người quản lý tài chính chính trong nhà?',
+      'Khoản chi nào bạn sẵn sàng chi mạnh tay, khoản nào bạn tiết kiệm tối đa?',
+      'Bạn có khoản nợ hoặc trách nhiệm tài chính nào hiện tại không?',
+      'Bạn nghĩ nên mua nhà sớm (dù phải vay) hay chờ tích lũy đủ mới mua?'
+    ]},
+    { name: 'Kỷ niệm & cảm xúc trong tình yêu', questions: [
+      'Khoảnh khắc nào giữa hai người khiến bạn nhớ nhất?',
+      'Điều gì ở đối phương khiến bạn quyết định muốn cưới người này?',
+      'Bạn cảm thấy được yêu thương nhất khi đối phương làm điều gì?',
+      'Lần gần nhất hai người cãi nhau là về chuyện gì, và bạn nghĩ nó đã được giải quyết chưa?',
+      'Điều gì bạn nghĩ đối phương đang cần từ bạn nhiều hơn hiện tại?'
+    ]}
+  ];
+
+  const FLAT = [];
+  GROUPS.forEach((g, gi) => {
+    g.questions.forEach(q => {
+      FLAT.push({ text: q, groupIndex: gi, groupName: g.name });
+    });
+  });
+  const TOTAL = FLAT.length;
+
+  // Mỗi câu: { self: '', guess: '' }
+  let answers = Array.from({ length: TOTAL }, () => ({ self: '', guess: '' }));
+  let currentIndex = 0;
+
+  function showStage(id) {
+    ['quiz-intro', 'quiz-playing', 'quiz-info', 'quiz-done'].forEach(s => {
+      document.getElementById(s).style.display = (s === id) ? '' : 'none';
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function startQuiz() {
+    showStage('quiz-playing');
+    currentIndex = 0;
+    render();
+  }
+
+  function render() {
+    const q = FLAT[currentIndex];
+    const container = document.getElementById('quiz-question');
+
+    const percent = Math.round(((currentIndex + 1) / TOTAL) * 100);
+    document.getElementById('quiz-progress-fill').style.width = percent + '%';
+    document.getElementById('quiz-group-label').textContent = `Nhóm ${q.groupIndex + 1}/6 · ${q.groupName}`;
+    document.getElementById('quiz-count-label').textContent = `Câu ${currentIndex + 1}/${TOTAL}`;
+
+    const a = answers[currentIndex];
+    container.innerHTML = `
+      <p class="quiz-question-text">${q.text}</p>
+      <div class="two-col-inputs">
+        <div class="two-col-item">
+          <label class="two-col-label">✍️ Câu trả lời của tôi</label>
+          <textarea class="two-col-textarea" placeholder="Trả lời về chính bạn..." oninput="updateSelf(this.value)">${a.self}</textarea>
+        </div>
+        <div class="two-col-item">
+          <label class="two-col-label">💭 Tôi đoán bạn đời sẽ trả lời</label>
+          <textarea class="two-col-textarea" placeholder="Đoán xem người ấy sẽ nói gì..." oninput="updateGuess(this.value)">${a.guess}</textarea>
+        </div>
+      </div>
+    `;
+
+    document.getElementById('btn-prev').disabled = (currentIndex === 0);
+    document.getElementById('btn-next').disabled = !(a.self.trim() && a.guess.trim());
+
+    if (currentIndex === TOTAL - 1) {
+      document.getElementById('btn-next').textContent = 'Hoàn thành →';
+    } else {
+      document.getElementById('btn-next').textContent = 'Tiếp theo →';
+    }
+  }
+
+  function updateSelf(val) {
+    answers[currentIndex].self = val;
+    updateNextButton();
+  }
+  function updateGuess(val) {
+    answers[currentIndex].guess = val;
+    updateNextButton();
+  }
+  function updateNextButton() {
+    const a = answers[currentIndex];
+    document.getElementById('btn-next').disabled = !(a.self.trim() && a.guess.trim());
+  }
+
+  function nextQuestion() {
+    if (currentIndex === TOTAL - 1) {
+      showStage('quiz-info');
+      return;
+    }
+    currentIndex++;
+    render();
+  }
+
+  function prevQuestion() {
+    if (currentIndex === 0) return;
+    currentIndex--;
+    render();
+  }
+
+  document.getElementById('quiz-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+
+    const answerStr = FLAT.map((q, i) => {
+      return `[${q.groupName}] ${q.text}\n→ Tôi: ${answers[i].self}\n→ Đoán bạn đời: ${answers[i].guess}`;
+    }).join('\n\n');
+    formData.append('answers', answerStr);
+    formData.append('quiz_type', 'Mức độ hiểu nhau');
+
+    // ⚠️ CHỊ THAY YOUR_FORM_ID BẰNG ID THẬT
+    fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+      if (response.ok) showStage('quiz-done');
+      else alert('Có lỗi xảy ra. Vui lòng thử lại.');
+    })
+    .catch(() => alert('Không kết nối được. Vui lòng kiểm tra mạng.'));
+  });
+  </script>
+
+</body>
+</html>
