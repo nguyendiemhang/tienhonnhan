@@ -346,20 +346,30 @@ img { max-width: 100%; display: block; }
 }
 
 .card-icon {
-  display: inline-block;
-  font-size: 1.8rem;
-  line-height: 1;
-  margin-bottom: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(184, 115, 51, 0.08));
+  border: 1px solid rgba(184, 115, 51, 0.25);
+  margin-bottom: 20px;
+  transition: var(--transition);
+}
+.card-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: var(--copper);
   transition: var(--transition);
 }
 .card:hover .card-icon {
-  transform: scale(1.15) rotate(-5deg);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(184, 115, 51, 0.15));
+  border-color: var(--gold);
 }
-.card .roman-sm {
-  margin-top: 0;
-}
-.card-highlight .card-icon {
-  filter: drop-shadow(0 2px 8px rgba(212,175,55,0.4));
+.card:hover .card-icon svg {
+  stroke: var(--gold);
+  transform: scale(1.1);
 }
 
 /* ============================================
