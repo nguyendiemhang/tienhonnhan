@@ -120,7 +120,7 @@
               <div class="form-row">
                 <label for="q-code">Mã cặp đôi *</label>
                 <input type="text" id="q-code" name="couple_code" required placeholder="VD: CAP-2025-001" style="text-transform: uppercase;">
-                <p class="field-hint">Mã này do chị cung cấp khi bạn đăng ký Mục I. Hai người phải điền <strong>cùng một mã</strong>.</p>
+                <p class="field-hint">Mã này do chúng tôi cung cấp khi bạn đăng ký Mục I. Hai người phải điền <strong>cùng một mã</strong>.</p>
               </div>
 
               <div class="form-row">
@@ -141,7 +141,7 @@
 
               <button type="submit" class="btn btn-gold" style="width: 100%; margin-top: 8px;">Gửi kết quả</button>
 
-              <p class="form-note">Sau khi gửi, chị sẽ phản hồi trong vòng 24 giờ.</p>
+              <p class="form-note">Sau khi gửi, chúng tôi sẽ phản hồi trong vòng 24 giờ.</p>
             </form>
           </div>
         </div>
@@ -401,9 +401,8 @@
     formData.append('raw_answers', rawAnswers);
     formData.append('quiz_type', 'Big Five');
 
-    // Gửi tới Formspree
-    // ⚠️ CHỊ THAY 'YOUR_FORM_ID' BẰNG ID THẬT CỦA CHỊ
-    fetch('https://formspree.io/f/YOUR_FORM_ID', {
+   
+    fetch('https://formspree.io/f/mdekzknv', {
       method: 'POST',
       body: formData,
       headers: { 'Accept': 'application/json' }
