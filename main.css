@@ -185,7 +185,7 @@ img { max-width: 100%; display: block; }
   color: var(--white);
   padding: 100px 5% 80px;
   text-align: center;
-  clip-path: inset(0);
+ 
 }
 .page-hero > * {
   position: relative;
@@ -264,20 +264,6 @@ img { max-width: 100%; display: block; }
   transform: translateY(-7px) rotate(-45deg);
 }
 
-@media (max-width: 820px) {
-  .nav-toggle { display: flex; }
-  .nav {
-    display: none;
-    position: absolute; top: 100%; left: 0; right: 0;
-    background: var(--navy);
-    flex-direction: column;
-    padding: 20px 5%;
-    gap: 16px;
-    border-top: 1px solid rgba(212,175,55,0.2);
-    z-index: 99;
-  }
-  .nav.open { display: flex; }
-}
 
 /* ============================================
    HERO TRANG CHỦ
@@ -1537,3 +1523,4 @@ img { max-width: 100%; display: block; }
   .quiz-question-text { font-size: 1.15rem; }
   .quiz-nav { flex-direction: column-reverse; }
 }
+
