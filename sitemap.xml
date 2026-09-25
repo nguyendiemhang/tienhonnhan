@@ -14,5 +14,8 @@
   <url><loc>https://tienhonnhan.com.vn/chinh-sach-bao-mat</loc><priority>0.5</priority></url>
   <url><loc>https://tienhonnhan.com.vn/dieu-khoan-su-dung</loc><priority>0.5</priority></url>
   <url><loc>https://tienhonnhan.com.vn/sitemap</loc><priority>0.4</priority></url>
-
+  <url><loc>https://tienhonnhan.com.vn/blog</loc><priority>0.9</priority></url>
+  <url><loc>https://tienhonnhan.com.vn/blog/5-dau-hieu-chua-san-sang-ket-hon</loc><priority>0.7</priority></url>
+  <url><loc>https://tienhonnhan.com.vn/blog/cach-noi-chuyen-tien-voi-nguoi-yeu</loc><priority>0.7</priority></url>
+  <url><loc>https://tienhonnhan.com.vn/blog/big-five-la-gi</loc><priority>0.7</priority></url>
 </urlset>
