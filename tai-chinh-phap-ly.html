@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
-<!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BM2ZQLBC8Y"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-BM2ZQLBC8Y');
-  </script>
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tài chính &amp; Pháp lý cặp đôi — Tiền Hôn Nhân</title>
@@ -27,17 +20,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Be+Vietnam+Pro:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/main.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BM2ZQLBC8Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BM2ZQLBC8Y');
+  </script>
 </head>
 <body>
 
-   <header class="site-header">
+  <header class="site-header">
     <a href="/" class="logo">
-      <img src="LogoTienhonnhan.png" alt="Gạch Nối — Tiền Hôn Nhân" />
+      <img src="/LogoTienhonnhan.png" alt="Gạch Nối — Tiền Hôn Nhân" />
     </a>
-
-  <button class="nav-toggle" aria-label="Menu">
-  <span></span><span></span><span></span>
-</button>
+    <button class="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
     <nav class="nav">
       <a href="/gioi-thieu">Giới thiệu</a>
       <a href="/thau-hieu-ban-than">Thấu hiểu</a>
@@ -45,13 +46,26 @@
       <a href="/tai-chinh-phap-ly">Tài chính</a>
       <a href="/suc-khoe-sinh-san">Sức khỏe</a>
       <a href="/tham-van-dong-hanh">Tham vấn</a>
-       <a href="/blog">Blog</a>
       <a href="/combo">Combo</a>
+      <a href="/blog">Blog</a>
       <a href="/dat-lich" class="nav-cta">Đặt lịch</a>
     </nav>
   </header>
+
   <main>
 
+    <!-- BREADCRUMB -->
+    <nav class="breadcrumb">
+      <div class="container">
+        <a href="/">Trang chủ</a>
+        <span>›</span>
+        <a href="/combo">Chương trình</a>
+        <span>›</span>
+        <span class="current">Mục III — Tài chính &amp; Pháp lý</span>
+      </div>
+    </nav>
+
+    <!-- PAGE HERO -->
     <section class="page-hero">
       <span class="roman">MỤC III</span>
       <h1>Tài chính &amp; Pháp lý cặp đôi</h1>
@@ -59,18 +73,20 @@
       <span class="audience-badge">💰 Dành cho cặp đôi sắp cưới, cần thống nhất tiền bạc</span>
     </section>
 
+    <!-- MỞ ĐẦU -->
     <section class="section">
       <div class="container narrow">
-        <span class="script">Mở đầu</span>
+        <span class="script-soft">Mở đầu</span>
         <h2 style="margin: 10px 0 24px;">Tiền không phải chuyện cấm kỵ</h2>
         <p>Tiền bạc là một trong những nguyên nhân xung đột phổ biến nhất trong hôn nhân — không phải vì thiếu tiền, mà vì <strong>chưa từng thống nhất cách quản lý</strong>.</p>
         <p>Mục này giúp hai bạn xây dựng nền tảng tài chính chung, và hiểu rõ quyền lợi, trách nhiệm pháp lý trước khi cưới.</p>
       </div>
     </section>
 
+    <!-- NỘI DUNG — PHẦN TÀI CHÍNH -->
     <section class="section section-cream">
       <div class="container narrow">
-        <span class="script">Nội dung — Phần Tài chính</span>
+        <span class="script-soft">Nội dung — Phần Tài chính</span>
         <h2 style="margin: 10px 0 32px;">Buổi 1 — Xây dựng nền tảng tài chính chung</h2>
 
         <div class="lesson-list">
@@ -81,7 +97,6 @@
               <p>Quỹ chung — quỹ riêng — tỷ lệ đóng góp. Các mô hình phổ biến và mô hình nào phù hợp với hoàn cảnh của hai bạn.</p>
             </div>
           </div>
-
           <div class="lesson-item">
             <span class="lesson-num">02</span>
             <div>
@@ -89,7 +104,6 @@
               <p>Quỹ khẩn cấp bao nhiêu là đủ? Kế hoạch tiết kiệm cho mua nhà, sinh con, nghỉ hưu — cụ thể theo thu nhập của hai bạn.</p>
             </div>
           </div>
-
           <div class="lesson-item">
             <span class="lesson-num">03</span>
             <div>
@@ -101,9 +115,25 @@
       </div>
     </section>
 
+    <!-- ✨ CTA GIỮA TRANG (MỚI) -->
+    <section class="section-cta-inline">
+      <div class="container narrow">
+        <div class="cta-inline-box">
+          <span class="script-soft">Đăng ký ngay</span>
+          <h3>Bạn muốn học Mục III?</h3>
+          <p>Học riêng mục này, hoặc chọn gói combo để tiết kiệm hơn.</p>
+          <div class="hero-actions" style="justify-content: center; margin-top: 24px;">
+            <a href="/dat-lich" class="btn btn-gold">Đăng ký ngay</a>
+            <a href="/combo" class="btn btn-outline">Xem trong combo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NỘI DUNG — PHẦN PHÁP LÝ -->
     <section class="section">
       <div class="container narrow">
-        <span class="script">Nội dung — Phần Pháp lý</span>
+        <span class="script-soft">Nội dung — Phần Pháp lý</span>
         <h2 style="margin: 10px 0 32px;">Buổi 2 — Hiểu rõ quyền lợi &amp; trách nhiệm</h2>
 
         <div class="lesson-list">
@@ -114,7 +144,6 @@
               <p>Hồ sơ cần gì, quy trình ra sao, những lưu ý khi hai người khác tỉnh/ quốc tịch. Luật sư giải đáp trực tiếp thắc mắc của hai bạn.</p>
             </div>
           </div>
-
           <div class="lesson-item">
             <span class="lesson-num">02</span>
             <div>
@@ -122,7 +151,6 @@
               <p>Theo Luật Hôn nhân &amp; Gia đình: cái gì mặc định là chung, cái gì có thể giữ riêng. Khi nào cần lập thoả thuận tài sản trước hôn nhân? Có nên không?</p>
             </div>
           </div>
-
           <div class="lesson-item">
             <span class="lesson-num">03</span>
             <div>
@@ -134,9 +162,10 @@
       </div>
     </section>
 
+    <!-- HÌNH THỨC -->
     <section class="section section-cream">
       <div class="container narrow">
-        <span class="script">Hình thức</span>
+        <span class="script-soft">Hình thức</span>
         <h2 style="margin: 10px 0 32px;">Học như thế nào</h2>
 
         <div class="info-grid">
@@ -160,9 +189,10 @@
       </div>
     </section>
 
+    <!-- KẾT QUẢ -->
     <section class="section">
       <div class="container narrow">
-        <span class="script">Bạn nhận được</span>
+        <span class="script-soft">Bạn nhận được</span>
         <h2 style="margin: 10px 0 24px;">Sau Mục III, hai bạn sẽ có</h2>
 
         <ul class="outcome-list">
@@ -174,10 +204,11 @@
       </div>
     </section>
 
+    <!-- FAQ -->
     <section class="section section-cream">
       <div class="container narrow">
         <div class="center" style="margin-bottom: 32px;">
-          <span class="script">Câu hỏi thường gặp</span>
+          <span class="script-soft">Câu hỏi thường gặp</span>
           <h2 style="margin-top: 10px;">Có thể bạn đang thắc mắc</h2>
         </div>
 
@@ -203,14 +234,77 @@
       </div>
     </section>
 
+    <!-- CTA CUỐI -->
     <section class="section">
       <div class="container narrow center">
-        <span class="script">Sẵn sàng bắt đầu?</span>
+        <span class="script-soft">Sẵn sàng bắt đầu?</span>
         <h2 style="margin: 12px 0 24px;">Đăng ký Mục III</h2>
         <p>Học riêng 2 buổi, hoặc gộp 1 buổi nếu chọn gói rút gọn.</p>
         <div class="hero-actions" style="justify-content: center; margin-top: 28px;">
           <a href="/dat-lich" class="btn btn-gold">Đăng ký mục này riêng</a>
           <a href="/combo" class="btn btn-outline">Xem trong combo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✨ MỤC KHÁC (MỚI) -->
+    <section class="section section-cream">
+      <div class="container">
+        <div class="center" style="margin-bottom: 40px;">
+          <span class="script-soft">Khám phá tiếp</span>
+          <h2 style="margin-top: 10px;">Các mục khác trong chương trình</h2>
+        </div>
+
+        <div class="grid-cards">
+          <a href="/thau-hieu-ban-than" class="card">
+            <span class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </span>
+            <span class="roman-sm">MỤC I</span>
+            <h3>Thấu hiểu bản thân</h3>
+            <p>Big Five + giá trị sống</p>
+          </a>
+
+          <a href="/giao-tiep-xung-dot" class="card">
+            <span class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+              </svg>
+            </span>
+            <span class="roman-sm">MỤC II</span>
+            <h3>Giao tiếp &amp; xung đột</h3>
+            <p>Ngôn ngữ tình yêu + tranh luận công bằng</p>
+          </a>
+
+          <a href="/suc-khoe-sinh-san" class="card">
+            <span class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+              </svg>
+            </span>
+            <span class="roman-sm">MỤC IV</span>
+            <h3>Sức khỏe sinh sản</h3>
+            <p>Y tế + tâm lý</p>
+          </a>
+
+          <a href="/tham-van-dong-hanh" class="card">
+            <span class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 20h10"/>
+                <path d="M10 20c5.5-2.5.8-6.4 3-10"/>
+                <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/>
+                <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/>
+              </svg>
+            </span>
+            <span class="roman-sm">MỤC V</span>
+            <h3>Tham vấn đồng hành</h3>
+            <p>Gói giờ 5h/10h</p>
+          </a>
         </div>
       </div>
     </section>
@@ -221,7 +315,9 @@
     <p class="script">Đồng hành cùng bạn trên hành trình về nhà</p>
     <p class="footer-contact">Email: <a href="mailto:tienhonnhan.com.vn@gmail.com">tienhonnhan.com.vn@gmail.com</a></p>
     <p class="footer-social">
-      <a href="https://www.facebook.com/profile.php?id=61594850762701" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/tienhonnhan" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.tiktok.com/@tienhonnhan" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.facebook.com/profile.php?id=61594850762701" target="_blank" rel="noopener">Facebook</a> ·
+      <a href="https://www.instagram.com/tienhonnhan" target="_blank" rel="noopener">Instagram</a> ·
+      <a href="https://www.tiktok.com/@tienhonnhan" target="_blank" rel="noopener">TikTok</a>
     </p>
     <p class="footer-links">
       <a href="/blog">Blog</a> ·
@@ -233,10 +329,23 @@
     <div class="footer-copy">© 2025 Tiền Hôn Nhân · tienhonnhan.com.vn</div>
   </footer>
 
-   <div class="floating-contact">
+  <!-- NÚT LIÊN HỆ NỔI -->
+  <div class="floating-contact">
     <a href="https://zalo.me/0977092182" target="_blank" rel="noopener" aria-label="Zalo" class="float-btn float-zalo">Zalo</a>
-    <a href="https://www.facebook.com/profile.php?id=61594850762701" target="_blank" rel="noopener" aria-label="Messenger" class="float-btn float-mess">💬</a>
+    <a href="https://m.me/sophianguyen24102014" target="_blank" rel="noopener" aria-label="Messenger" class="float-btn float-mess">💬</a>
   </div>
+
+  <!-- ✨ STICKY CTA BAR (MỚI) -->
+  <div class="sticky-cta">
+    <span class="sticky-cta-text">
+      <strong>Muốn học Mục III?</strong> Bắt đầu ngay hôm nay
+    </span>
+    <div class="sticky-cta-actions">
+      <a href="/dat-lich" class="btn btn-gold">Đặt lịch</a>
+      <a href="/combo" class="btn btn-outline-light">Xem combo</a>
+    </div>
+  </div>
+
   <script src="/main.js"></script>
 </body>
 </html>
