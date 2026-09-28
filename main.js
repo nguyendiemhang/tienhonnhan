@@ -116,3 +116,14 @@
   }
 
 })();
+  /* --- Sticky CTA bar --- */
+  var stickyCta = document.querySelector('.sticky-cta');
+  if (stickyCta) {
+    window.addEventListener('scroll', function () {
+      if (window.pageYOffset > 300) {
+        stickyCta.classList.add('visible');
+      } else {
+        stickyCta.classList.remove('visible');
+      }
+    }, { passive: true });
+  }
