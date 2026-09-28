@@ -23,10 +23,12 @@
 /* ============================================
    SCRIPT FONT — chữ viết tay
    ============================================ */
+
+/* Class cũ — CHỈ giữ ở 2 chỗ cảm xúc */
 .script {
   font-family: var(--font-script);
   font-weight: 400;
-  color: var(--pink);
+  color: var(--copper);      /* đổi từ pink → copper cho dễ đọc */
   font-size: 1.6rem;
   line-height: 1.5;
   letter-spacing: 0.01em;
