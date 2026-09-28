@@ -20,6 +20,17 @@
   --radius-pill: 999px;
   --transition: 0.4s ease;
 }
+/* ============================================
+   SCRIPT FONT — chữ viết tay
+   ============================================ */
+.script {
+  font-family: var(--font-script);
+  font-weight: 400;
+  color: var(--pink);
+  font-size: 1.6rem;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
 
 /* ============================================
    RESET & BASE
