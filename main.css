@@ -1908,3 +1908,131 @@ img { max-width: 100%; display: block; }
     max-height: 320px;
   }
 }
+/* ============================================
+   BỔ SUNG — Breadcrumb, CTA inline, Sticky CTA
+   ============================================ */
+
+/* --- Breadcrumb --- */
+.breadcrumb {
+  background: var(--cream);
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(184, 115, 51, 0.15);
+  font-size: 0.88rem;
+}
+.breadcrumb .container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.breadcrumb a {
+  color: var(--copper);
+  transition: var(--transition);
+}
+.breadcrumb a:hover {
+  color: var(--gold);
+  text-decoration: underline;
+}
+.breadcrumb span {
+  color: var(--navy);
+  opacity: 0.5;
+}
+.breadcrumb .current {
+  color: var(--navy);
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+/* --- CTA inline (giữa trang) --- */
+.section-cta-inline {
+  padding: 40px 5%;
+}
+.cta-inline-box {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.08), rgba(184, 115, 51, 0.05));
+  border: 1px solid rgba(184, 115, 51, 0.3);
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 32px 36px;
+  text-align: center;
+}
+.cta-inline-box h3 {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  margin: 8px 0 10px;
+  color: var(--navy);
+}
+.cta-inline-box p {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  margin-bottom: 4px;
+}
+@media (max-width: 640px) {
+  .cta-inline-box { padding: 24px 20px; }
+}
+
+/* --- Sticky CTA bar --- */
+.sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(90deg, var(--navy), var(--navy-2));
+  color: var(--white);
+  padding: 14px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+  z-index: 80;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+.sticky-cta.visible {
+  transform: translateY(0);
+}
+.sticky-cta-text {
+  font-size: 0.95rem;
+  opacity: 0.92;
+}
+.sticky-cta-text strong {
+  color: var(--gold);
+}
+.sticky-cta-actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.sticky-cta .btn {
+  padding: 10px 20px;
+  font-size: 0.88rem;
+}
+
+/* Đẩy nút liên hệ nổi lên trên sticky bar */
+.floating-contact {
+  bottom: 90px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .sticky-cta {
+    flex-direction: column;
+    padding: 10px 5%;
+    gap: 8px;
+  }
+  .sticky-cta-text {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+  .sticky-cta-actions {
+    width: 100%;
+    justify-content: center;
+  }
+  .sticky-cta .btn {
+    padding: 8px 16px;
+    font-size: 0.82rem;
+  }
+  .floating-contact {
+    bottom: 100px;
+  }
+}
