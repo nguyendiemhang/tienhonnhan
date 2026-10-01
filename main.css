@@ -2051,3 +2051,192 @@ img { max-width: 100%; display: block; }
 @media (max-width: 520px) {
   .info-grid { grid-template-columns: 1fr; }
 }
+/* ============================================
+   BỔ SUNG — Sơ đồ cây lộ trình
+   ============================================ */
+
+.cay-so-do {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* --- Trung tâm --- */
+.cay-trung-tam {
+  background: linear-gradient(135deg, var(--navy), var(--navy-2));
+  color: var(--white);
+  border-radius: var(--radius);
+  padding: 24px 40px;
+  text-align: center;
+  max-width: 320px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 12px 32px rgba(27, 42, 78, 0.25);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+.cay-trung-tam-label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+.cay-trung-tam-title {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+.cay-trung-tam-sub {
+  display: block;
+  font-size: 0.85rem;
+  opacity: 0.75;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* --- Đường dọc từ trung tâm xuống --- */
+.cay-duong-doc {
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(180deg, var(--gold), var(--copper));
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Đường ngang nối 5 nhánh --- */
+.cay-duong-ngang {
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--copper) 15%, var(--copper) 85%, transparent 100%);
+  margin: 0 auto;
+  max-width: 85%;
+  position: relative;
+}
+
+/* 5 điểm nối dọc xuống từng nhánh — dùng pseudo-element */
+.cay-nhanh {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+  position: relative;
+}
+
+/* Đường dọc nhỏ từ đường ngang xuống mỗi card */
+.cay-nhanh-item::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 40px;
+  background: var(--copper);
+  opacity: 0.5;
+}
+
+/* --- Mỗi nhánh --- */
+.cay-nhanh-item {
+  background: var(--white);
+  border: 1px solid rgba(184, 115, 51, 0.3);
+  border-radius: var(--radius);
+  padding: 24px 18px;
+  text-align: center;
+  transition: var(--transition);
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cay-nhanh-item:hover {
+  border-color: var(--copper);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(232, 160, 168, 0.25);
+}
+
+.cay-nhanh-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--copper));
+  color: var(--navy);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 12px rgba(184, 115, 51, 0.25);
+}
+
+.cay-nhanh-label {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 8px;
+}
+
+.cay-nhanh-item h3 {
+  font-size: 1.05rem;
+  color: var(--navy);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.cay-nhanh-item p {
+  font-size: 0.82rem;
+  opacity: 0.8;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Nhánh cuối — Mục V — màu hồng */
+.cay-nhanh-final .cay-nhanh-num {
+  background: linear-gradient(135deg, var(--pink), var(--pink-2));
+}
+
+/* --- Responsive tablet --- */
+@media (max-width: 900px) {
+  .cay-nhanh {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    row-gap: 40px;
+  }
+  
+  /* Ẩn đường kẻ phức tạp trên tablet */
+  .cay-duong-ngang {
+    display: none;
+  }
+  .cay-nhanh-item::before {
+    display: none;
+  }
+}
+
+/* --- Responsive mobile --- */
+@media (max-width: 600px) {
+  .cay-nhanh {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 32px;
+  }
+  
+  .cay-trung-tam {
+    padding: 20px 24px;
+    max-width: 260px;
+  }
+  .cay-trung-tam-title {
+    font-size: 1.5rem;
+  }
+  
+  .cay-duong-doc {
+    height: 24px;
+  }
+}
