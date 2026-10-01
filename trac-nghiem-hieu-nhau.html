@@ -283,11 +283,16 @@
       <div class="two-col-inputs">
         <div class="two-col-item">
           <label class="two-col-label">✍️ Câu trả lời của tôi</label>
-          <textarea class="two-col-textarea" placeholder="Trả lời về chính bạn..." oninput="updateSelf(this.value)">${a.self}</textarea>
-        </div>
-        <div class="two-col-item">
-          <label class="two-col-label">💭 Tôi đoán bạn đời sẽ trả lời</label>
-          <textarea class="two-col-textarea" placeholder="Đoán xem người ấy sẽ nói gì..." oninput="updateGuess(this.value)">${a.guess}</textarea>
+          <textarea class="two-col-textarea" 
+          minlength="5" 
+          required
+          placeholder="Trả lời về chính bạn (ít nhất 5 ký tự)..." 
+          oninput="updateSelf(this.value)">${a.self}</textarea>
+<textarea class="two-col-textarea" 
+          minlength="5" 
+          required
+          placeholder="Đoán xem người ấy sẽ nói gì (ít nhất 5 ký tự)..." 
+          oninput="updateGuess(this.value)">${a.guess}</textarea>
         </div>
       </div>
     `;
