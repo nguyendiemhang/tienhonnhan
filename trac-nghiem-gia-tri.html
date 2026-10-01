@@ -344,7 +344,11 @@
   function renderPartC() {
     const q = document.getElementById('quiz-question');
     let html = `<p class="quiz-question-text">${PART_C_QUESTIONS[currentIndex]}</p>`;
-    html += `<textarea class="part-c-textarea" placeholder="Chia sẻ câu trả lời của bạn..." oninput="selectC(this.value)">${partC[currentIndex]}</textarea>`;
+    html += `<textarea class="part-c-textarea" 
+          minlength="10" 
+          required
+          placeholder="Chia sẻ câu trả lời của bạn (ít nhất 10 ký tự)..." 
+          oninput="selectC(this.value)"></textarea>`;
     q.innerHTML = html;
   }
 
