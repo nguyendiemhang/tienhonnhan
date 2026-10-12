@@ -39,7 +39,7 @@
       <a href="/suc-khoe-sinh-san">Sức khỏe</a>
       <a href="/tham-van-dong-hanh">Tham vấn</a>
       <a href="/combo">Combo</a>
-    <a href="/blog">Blog</a>
+      <a href="/blog">Blog</a>
       <a href="/dat-lich" class="nav-cta">Đặt lịch</a>
     </nav>
   </header>
@@ -64,6 +64,7 @@
     <section class="section">
       <div class="container narrow quiz-container">
 
+        <!-- ===== STAGE 1: INTRO ===== -->
         <div id="quiz-intro" class="quiz-stage">
           <div class="quiz-intro-card">
             <span class="script-soft">Trước khi bắt đầu</span>
@@ -73,8 +74,8 @@
 
             <p style="margin-top: 16px;"><strong>Điểm đặc biệt:</strong> Mỗi câu bạn trả lời <strong>2 lần</strong>:</p>
             <ul style="margin: 12px 0 16px 20px; line-height: 1.9;">
-              <li><strong>Cột trái:</strong> Câu trả lời thật của <em>bạn</em></li>
-              <li><strong>Cột phải:</strong> Bạn <em>đoán</em> đối phương sẽ trả lời gì</li>
+              <li><strong>Lần 1:</strong> Câu trả lời thật của <em>bạn</em></li>
+              <li><strong>Lần 2:</strong> Bạn <em>đoán</em> đối phương sẽ trả lời gì</li>
             </ul>
 
             <p>Hai bạn làm riêng, không trao đổi trước. Sau đó chị sẽ đối chiếu 2 bảng để tính số câu đoán đúng — càng nhiều càng hiểu nhau.</p>
@@ -84,10 +85,18 @@
               <p>Tỷ lệ đoán sai cao không phải dấu hiệu xấu — mà là danh sách chủ đề hai bạn cần nói chuyện trước khi cưới.</p>
             </div>
 
+            <div class="quiz-note" style="background: #FFF8E7; border-left: 3px solid #C87F2A;">
+              <strong>⚠️ Lưu ý quan trọng</strong>
+              <p>Bài test này dựa trên khung <strong>Love Maps</strong> — một khái niệm trong Gottman Method, tập trung vào việc hiểu thế giới nội tâm của người bạn đời.</p>
+              <p>Đây <strong>KHÔNG PHẢI</strong> bài test tâm lý học chuẩn hóa. Kết quả <strong>KHÔNG</strong> chẩn đoán mức độ hợp nhau, khả năng thành công của hôn nhân, hay mức độ yêu nhau.</p>
+              <p>Bài test chỉ phản ánh <strong>mức độ trùng khớp câu trả lời</strong> — đo mức độ chính xác khi một người dự đoán câu trả lời của người kia. Đây là <strong>danh sách gợi ý</strong> các chủ đề nên nói chuyện trước khi cưới — không phải bản án.</p>
+            </div>
+
             <button class="btn btn-gold" onclick="startQuiz()" style="margin-top: 28px; width: 100%;">Bắt đầu làm bài</button>
           </div>
         </div>
 
+        <!-- ===== STAGE 2: PLAYING ===== -->
         <div id="quiz-playing" class="quiz-stage" style="display: none;">
           <div class="quiz-progress">
             <div class="quiz-progress-info">
@@ -107,6 +116,7 @@
           </div>
         </div>
 
+        <!-- ===== STAGE 3: INFO ===== -->
         <div id="quiz-info" class="quiz-stage" style="display: none;">
           <div class="quiz-info-card">
             <span class="script-soft">Gần xong rồi</span>
@@ -150,13 +160,14 @@
           </div>
         </div>
 
+        <!-- ===== STAGE 4: DONE ===== -->
         <div id="quiz-done" class="quiz-stage" style="display: none;">
           <div class="quiz-done-card center">
             <span class="thanks-icon">♥</span>
             <h2 style="margin: 20px 0 12px;">Cảm ơn bạn đã hoàn thành</h2>
             <p class="script" style="font-size: 1.3rem;">Kết quả đã được gửi đi an toàn</p>
             <p style="margin-top: 20px;">Chị sẽ ghép kết quả của bạn với người bạn đời và phản hồi trong vòng <strong>24 giờ</strong>.</p>
-          <div class="hero-actions" style="justify-content: center; margin-top: 32px;">
+            <div class="hero-actions" style="justify-content: center; margin-top: 32px;">
               <a href="/trac-nghiem" class="btn btn-gold">Xem lại 3 bộ trắc nghiệm</a>
               <a href="/" class="btn btn-outline">Về trang chủ</a>
               <a href="/dat-lich" class="btn btn-outline">Đặt lịch giải mã</a>
@@ -176,7 +187,7 @@
       <a href="https://www.facebook.com/profile.php?id=61594850762701" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/tienhonnhan" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.tiktok.com/@tienhonnhan" target="_blank" rel="noopener">TikTok</a>
     </p>
     <p class="footer-links">
-   <a href="/blog">Blog</a> ·
+      <a href="/blog">Blog</a> ·
       <a href="/chinh-sach-bao-mat">Chính sách bảo mật</a> ·
       <a href="/dieu-khoan-su-dung">Điều khoản sử dụng</a> ·
       <a href="/chinh-sach-hoan-tien">Chính sách hoàn tiền</a> ·
@@ -189,70 +200,219 @@
 
   <script>
   /* ============================================================
-     MỨC ĐỘ HIỂU NHAU QUIZ
+     MỨC ĐỘ HIỂU NHAU QUIZ — 36 CÂU HỎI (FORMAT MỚI)
      ============================================================ */
 
   const GROUPS = [
-    { name: 'Thói quen sinh hoạt & sở thích', questions: [
-      'Món ăn yêu thích nhất của bạn là gì?',
-      'Bạn thích dành một buổi tối rảnh để làm gì nhất?',
-      'Bạn là người thích dậy sớm hay thức khuya?',
-      'Khi căng thẳng, bạn thường làm gì để giải tỏa?',
-      'Bạn có sợ điều gì (con vật, độ cao, không gian kín...) không?',
-      'Kiểu kỳ nghỉ bạn thích nhất là gì — nghỉ dưỡng yên tĩnh hay khám phá năng động?',
-      'Bạn thích không gian sống gọn gàng tối giản hay thoải mái bừa bộn một chút?'
-    ]},
-    { name: 'Ước mơ, mục tiêu, nỗi lo', questions: [
-      'Mục tiêu lớn nhất bạn muốn đạt được trong 5 năm tới là gì?',
-      'Điều gì khiến bạn tự hào nhất về bản thân?',
-      'Điều gì bạn đang lo lắng nhất về tương lai?',
-      'Nếu không phải lo về tiền bạc, bạn sẽ muốn làm công việc gì?',
-      'Ước mơ nào bạn từng có mà chưa thực hiện được?',
-      'Bạn cảm thấy áp lực nhất về vấn đề gì trong cuộc sống hiện tại?',
-      'Điều gì bạn muốn đối phương hiểu về mình hơn?'
-    ]},
-    { name: 'Quan điểm nuôi dạy con', questions: [
-      'Bạn muốn có bao nhiêu con?',
-      'Bạn nghĩ nên dạy con theo hướng nghiêm khắc hay tự do?',
-      'Ai sẽ là người chăm sóc con chính trong 1-2 năm đầu — hay chia đều?',
-      'Bạn có quan điểm gì về việc đánh đòn/la mắng con khi con hư?',
-      'Điều gì bạn nhất định muốn con mình có được khi lớn lên?',
-      'Bạn nghĩ ông bà nội/ngoại nên tham gia vào việc nuôi dạy con ở mức độ nào?'
-    ]},
-    { name: 'Quan hệ với gia đình hai bên', questions: [
-      'Bạn nghĩ nên về thăm gia đình (nội/ngoại) với tần suất thế nào?',
-      'Nếu bố mẹ một bên cần ở cùng một thời gian, bạn cảm thấy thế nào?',
-      'Bạn thoải mái đến đâu khi gia đình đối phương góp ý vào chuyện riêng của hai vợ chồng?',
-      'Dịp lễ Tết, bạn nghĩ nên ưu tiên bên nội hay bên ngoại, hay chia đều?',
-      'Bạn có mối lo ngại nào về việc hòa hợp với gia đình đối phương không?',
-      'Bạn nghĩ nên hỗ trợ tài chính cho gia đình hai bên ở mức nào là hợp lý?'
-    ]},
-    { name: 'Tiền bạc & lối sống', questions: [
-      'Bạn là người thích tiết kiệm hay thích chi tiêu cho trải nghiệm?',
-      'Bạn nghĩ ai nên là người quản lý tài chính chính trong nhà?',
-      'Khoản chi nào bạn sẵn sàng chi mạnh tay, khoản nào bạn tiết kiệm tối đa?',
-      'Bạn có khoản nợ hoặc trách nhiệm tài chính nào hiện tại không?',
-      'Bạn nghĩ nên mua nhà sớm (dù phải vay) hay chờ tích lũy đủ mới mua?'
-    ]},
-    { name: 'Kỷ niệm & cảm xúc trong tình yêu', questions: [
-      'Khoảnh khắc nào giữa hai người khiến bạn nhớ nhất?',
-      'Điều gì ở đối phương khiến bạn quyết định muốn cưới người này?',
-      'Bạn cảm thấy được yêu thương nhất khi đối phương làm điều gì?',
-      'Lần gần nhất hai người cãi nhau là về chuyện gì, và bạn nghĩ nó đã được giải quyết chưa?',
-      'Điều gì bạn nghĩ đối phương đang cần từ bạn nhiều hơn hiện tại?'
-    ]}
+    {
+      name: 'Thói quen sinh hoạt & sở thích',
+      questions: [
+        {
+          text: 'Món ăn yêu thích nhất của bạn là gì?',
+          options: ['Bún / Phở / Mì', 'Cơm gia đình', 'Đồ ăn nhanh / Fast food', 'Món khác (viết ngắn)'],
+          allowOther: true
+        },
+        {
+          text: 'Bạn thích dành một buổi tối rảnh để làm gì nhất?',
+          options: ['Thư giãn một mình (đọc sách, xem phim)', 'Quây quần bên gia đình / người thân', 'Gặp bạn bè', 'Làm việc / học tập', 'Khác (viết ngắn)'],
+          allowOther: true
+        },
+        {
+          text: 'Bạn là người thích dậy sớm hay thức khuya?',
+          options: ['Dậy sớm', 'Thức khuya', 'Tùy ngày — không cố định']
+        },
+        {
+          text: 'Khi căng thẳng, bạn thường làm gì để giải tỏa?',
+          options: ['Ở một mình, yên tĩnh', 'Chia sẻ với người thân / bạn bè', 'Làm việc khác để quên', 'Ăn uống / mua sắm', 'Khác (viết ngắn)'],
+          allowOther: true
+        },
+        {
+          text: 'Bạn có sợ điều gì (con vật, độ cao, không gian kín...) không?',
+          options: ['Sợ con vật (chuột, nhện...)', 'Sợ độ cao', 'Sợ không gian kín', 'Không sợ gì đặc biệt', 'Sợ điều khác (viết ngắn)'],
+          allowOther: true
+        },
+        {
+          text: 'Kiểu kỳ nghỉ bạn thích nhất là gì?',
+          options: ['Nghỉ dưỡng yên tĩnh', 'Khám phá năng động', 'Cân bằng cả hai', 'Về thăm gia đình']
+        },
+        {
+          text: 'Bạn thích không gian sống như thế nào?',
+          options: ['Gọn gàng, tối giản', 'Thoải mái, bừa bộn một chút', 'Không quan trọng lắm']
+        }
+      ]
+    },
+    {
+      name: 'Ước mơ, mục tiêu, nỗi lo',
+      questions: [
+        {
+          text: 'Mục tiêu lớn nhất bạn muốn đạt được trong 5 năm tới là gì?',
+          options: ['Sự nghiệp / thăng tiến', 'Kết hôn / sinh con', 'Mua nhà / ổn định tài chính', 'Định cư / du học', 'Phát triển bản thân (học, sức khỏe)', 'Khác (viết ngắn)'],
+          allowOther: true
+        },
+        {
+          text: 'Điều gì khiến bạn tự hào nhất về bản thân?',
+          options: ['Sự nghiệp / thành tựu', 'Gia đình / mối quan hệ', 'Tính cách / phẩm chất', 'Khác (viết ngắn)'],
+          allowOther: true
+        },
+        {
+          text: 'Điều gì bạn đang lo lắng nhất về tương lai?',
+          options: ['Tài chính / công việc', 'Hạnh phúc gia đình', 'Sức khỏe (bản thân / gia đình)', 'Giấy tờ / định cư', 'Con cái', 'Khác (viết ngắn)'],
+          allowOther: true
+        },
+        {
+          text: 'Nếu không phải lo về tiền bạc, bạn sẽ muốn làm công việc gì?',
+          options: ['Kinh doanh / khởi nghiệp', 'Nghệ thuật / sáng tạo', 'Giáo dục / giúp đỡ người khác', 'Du lịch / trải nghiệm', 'Khác (viết ngắn)'],
+          allowOther: true
+        },
+        {
+          text: 'Ước mơ nào bạn từng có mà chưa thực hiện được?',
+          options: ['Mở cơ sở kinh doanh riêng', 'Đi du lịch / khám phá nơi mới', 'Học thêm / nâng cao trình độ', 'Mua nhà / tài sản lớn', 'Khác (viết ngắn)'],
+          allowOther: true
+        },
+        {
+          text: 'Bạn cảm thấy áp lực nhất về vấn đề gì trong cuộc sống hiện tại?',
+          options: ['Công việc', 'Tài chính', 'Gia đình / mối quan hệ', 'Giấy tờ / định cư', 'Sức khỏe', 'Khác (viết ngắn)'],
+          allowOther: true
+        },
+        {
+          text: 'Điều gì bạn muốn đối phương hiểu về mình hơn?',
+          options: ['Cảm xúc / suy nghĩ của tôi', 'Trách nhiệm / bổn phận của tôi', 'Khó khăn / áp lực tôi đang chịu', 'Ước mơ / hoài bão của tôi', 'Khác (viết ngắn)'],
+          allowOther: true
+        }
+      ]
+    },
+    {
+      name: 'Quan điểm nuôi dạy con',
+      questions: [
+        {
+          text: 'Bạn muốn có bao nhiêu con?',
+          options: ['1 con', '2 con', '3 con trở lên', 'Chưa quyết định', 'Không muốn có con']
+        },
+        {
+          text: 'Bạn nghĩ nên dạy con theo hướng nào?',
+          options: ['Nghiêm khắc — kỷ luật rõ ràng', 'Tự do — tôn trọng sự phát triển tự nhiên', 'Cân bằng cả hai', 'Chưa rõ — sẽ học hỏi khi có con']
+        },
+        {
+          text: 'Ai sẽ là người chăm sóc con chính trong 1-2 năm đầu?',
+          options: ['Người vợ / mẹ', 'Người chồng / bố', 'Cả hai chia đều', 'Ông bà hai bên', 'Người giúp việc']
+        },
+        {
+          text: 'Quan điểm của bạn về việc đánh đòn / la mắng con khi con hư?',
+          options: ['Không nên — chỉ giải thích', 'Có thể la mắng — nhưng không đánh', 'Cần thiết — tùy mức độ', 'Khác (viết ngắn)'],
+          allowOther: true
+        },
+        {
+          text: 'Điều gì bạn nhất định muốn con mình có được khi lớn lên?',
+          options: ['Nề nếp / lễ phép', 'Tự lập / tự tin', 'Học vấn / kiến thức', 'Sức khỏe / hạnh phúc', 'Khác (viết ngắn)'],
+          allowOther: true
+        },
+        {
+          text: 'Bạn nghĩ ông bà nội/ngoại nên tham gia vào việc nuôi dạy con ở mức độ nào?',
+          options: ['Tham gia nhiều — cả chăm sóc và dạy dỗ', 'Hỗ trợ chăm sóc, không can thiệp dạy dỗ', 'Chỉ thăm nom, không tham gia', 'Tùy hoàn cảnh']
+        }
+      ]
+    },
+    {
+      name: 'Quan hệ với gia đình hai bên',
+      questions: [
+        {
+          text: 'Bạn nghĩ nên về thăm gia đình (nội/ngoại) với tần suất nào?',
+          options: ['Mỗi tuần', 'Mỗi tháng 1-2 lần', 'Mỗi quý / dịp lễ', 'Mỗi năm 1-2 lần', 'Tùy hoàn cảnh']
+        },
+        {
+          text: 'Nếu bố mẹ một bên cần ở cùng một thời gian, bạn cảm thấy thế nào?',
+          options: ['Rất vui và thoải mái', 'Vui nhưng cần không gian riêng', 'Hơi lo lắng', 'Không thoải mái']
+        },
+        {
+          text: 'Bạn thoải mái đến đâu khi gia đình đối phương góp ý vào chuyện riêng của hai vợ chồng?',
+          options: ['Rất sẵn lòng lắng nghe', 'Lắng nghe nhưng tự quyết định', 'Chỉ thoải mái với một số chủ đề', 'Không thoải mái']
+        },
+        {
+          text: 'Dịp lễ Tết, bạn nghĩ nên ưu tiên bên nội hay bên ngoại?',
+          options: ['Ưu tiên bên nội', 'Ưu tiên bên ngoại', 'Chia đều hai bên', 'Tùy năm / tùy hoàn cảnh']
+        },
+        {
+          text: 'Bạn có mối lo ngại nào về việc hòa hợp với gia đình đối phương không?',
+          options: ['Không lo ngại gì', 'Có lo ngại một chút', 'Có lo ngại rõ rệt', 'Chưa từng nghĩ tới']
+        },
+        {
+          text: 'Bạn nghĩ nên hỗ trợ tài chính cho gia đình hai bên ở mức nào?',
+          options: ['Hỗ trợ tối đa khi cần', 'Hỗ trợ định kỳ hàng tháng', 'Hỗ trợ khi có việc lớn', 'Ưu tiên gia đình nhỏ trước', 'Khác (viết ngắn)'],
+          allowOther: true
+        }
+      ]
+    },
+    {
+      name: 'Tiền bạc & lối sống',
+      questions: [
+        {
+          text: 'Bạn là người thích tiết kiệm hay thích chi tiêu cho trải nghiệm?',
+          options: ['Tiết kiệm là chính', 'Chi tiêu cho trải nghiệm', 'Cân bằng cả hai', 'Tùy hoàn cảnh']
+        },
+        {
+          text: 'Bạn nghĩ ai nên là người quản lý tài chính chính trong nhà?',
+          options: ['Người vợ', 'Người chồng', 'Cả hai cùng quản lý', 'Người nào giỏi hơn thì quản', 'Khác (viết ngắn)'],
+          allowOther: true
+        },
+        {
+          text: 'Khoản chi nào bạn sẵn sàng chi mạnh tay?',
+          options: ['Sức khỏe', 'Giáo dục / học tập', 'Du lịch / trải nghiệm', 'Gia đình / con cái', 'Khác (viết ngắn)'],
+          allowOther: true
+        },
+        {
+          text: 'Bạn có khoản nợ hoặc trách nhiệm tài chính nào hiện tại không?',
+          options: ['Không có', 'Có — mua nhà / đất', 'Có — kinh doanh', 'Có — khoản khác (viết ngắn)'],
+          allowOther: true
+        },
+        {
+          text: 'Bạn nghĩ nên mua nhà sớm (dù phải vay) hay chờ tích lũy đủ?',
+          options: ['Mua sớm khi có cơ hội', 'Chờ tích lũy đủ mới mua', 'Tùy tình hình tài chính', 'Không cần mua nhà']
+        }
+      ]
+    },
+    {
+      name: 'Kỷ niệm & cảm xúc trong tình yêu',
+      questions: [
+        {
+          text: 'Khoảnh khắc nào giữa hai người khiến bạn nhớ nhất?',
+          options: ['Kỷ niệm đặc biệt (sinh nhật, kỷ niệm)', 'Chuyến đi / du lịch cùng nhau', 'Lần đầu gặp / lần tỏ tình', 'Khoảnh khắc khó khăn vượt qua cùng nhau', 'Khác (viết ngắn)'],
+          allowOther: true
+        },
+        {
+          text: 'Điều gì ở đối phương khiến bạn quyết định muốn cưới người này?',
+          options: ['Biết quan tâm, chăm sóc', 'Trách nhiệm với gia đình', 'Hiểu và đồng hành cùng tôi', 'Tính cách / giá trị sống phù hợp', 'Khác (viết ngắn)'],
+          allowOther: true
+        },
+        {
+          text: 'Bạn cảm thấy được yêu thương nhất khi đối phương làm điều gì?',
+          options: ['Nói lời yêu thương / khen ngợi', 'Dành thời gian chất lượng', 'Tặng quà / bất ngờ', 'Hành động chăm sóc (nấu ăn, giúp việc)', 'Va chạm thể xác (nắm tay, ôm)', 'Khác (viết ngắn)'],
+          allowOther: true
+        },
+        {
+          text: 'Lần gần nhất hai người cãi nhau là về chuyện gì?',
+          options: ['Chỗ ở / nơi sinh sống', 'Tài chính / chi tiêu', 'Thời gian dành cho nhau', 'Gia đình hai bên', 'Khác (viết ngắn)'],
+          allowOther: true
+        },
+        {
+          text: 'Điều gì bạn nghĩ đối phương đang cần từ bạn nhiều hơn hiện tại?',
+          options: ['Yêu thương / quan tâm hơn', 'Thấu hiểu / lắng nghe hơn', 'Đồng hành / chia sẻ việc nhà', 'Không gian riêng', 'Khác (viết ngắn)'],
+          allowOther: true
+        }
+      ]
+    }
   ];
 
+  // Flatten questions
   const FLAT = [];
   GROUPS.forEach((g, gi) => {
     g.questions.forEach(q => {
-      FLAT.push({ text: q, groupIndex: gi, groupName: g.name });
+      FLAT.push({ ...q, groupIndex: gi, groupName: g.name });
     });
   });
   const TOTAL = FLAT.length;
 
-  // Mỗi câu: { self: '', guess: '' }
-  let answers = Array.from({ length: TOTAL }, () => ({ self: '', guess: '' }));
+  // Answers: mỗi câu có { self: '', selfOther: '', guess: '', guessOther: '' }
+  let answers = Array.from({ length: TOTAL }, () => ({ self: '', selfOther: '', guess: '', guessOther: '' }));
   let currentIndex = 0;
 
   function showStage(id) {
@@ -268,38 +428,66 @@
     render();
   }
 
+  function renderOptions(q, side) {
+    // side: 'self' hoặc 'guess'
+    const inputName = `q${currentIndex}_${side}`;
+    const currentVal = answers[currentIndex][side];
+    let html = '<div class="quiz-options">';
+    
+    q.options.forEach((opt, i) => {
+      const optId = `${inputName}_opt${i}`;
+      const isOther = opt.toLowerCase().includes('khác') && q.allowOther;
+      const isChecked = currentVal === opt ? 'checked' : '';
+      
+      if (isOther) {
+        html += `
+          <label class="quiz-option" for="${optId}">
+            <input type="radio" id="${optId}" name="${inputName}" value="${opt}" ${isChecked} onchange="updateAnswer('${side}', '${opt.replace(/'/g, "\\'")}')">
+            <span>${opt}:</span>
+            <input type="text" class="quiz-other-input" placeholder="Viết ngắn..." value="${answers[currentIndex][side + 'Other'] || ''}" oninput="updateOther('${side}', this.value)" onclick="event.preventDefault(); document.getElementById('${optId}').checked = true; updateAnswer('${side}', '${opt.replace(/'/g, "\\'")}');">
+          </label>
+        `;
+      } else {
+        html += `
+          <label class="quiz-option" for="${optId}">
+            <input type="radio" id="${optId}" name="${inputName}" value="${opt}" ${isChecked} onchange="updateAnswer('${side}', '${opt.replace(/'/g, "\\'")}')">
+            <span>${opt}</span>
+          </label>
+        `;
+      }
+    });
+    
+    html += '</div>';
+    return html;
+  }
+
   function render() {
     const q = FLAT[currentIndex];
     const container = document.getElementById('quiz-question');
 
+    // Progress
     const percent = Math.round(((currentIndex + 1) / TOTAL) * 100);
     document.getElementById('quiz-progress-fill').style.width = percent + '%';
     document.getElementById('quiz-group-label').textContent = `Nhóm ${q.groupIndex + 1}/6 · ${q.groupName}`;
     document.getElementById('quiz-count-label').textContent = `Câu ${currentIndex + 1}/${TOTAL}`;
 
-    const a = answers[currentIndex];
+    // Render
     container.innerHTML = `
       <p class="quiz-question-text">${q.text}</p>
-      <div class="two-col-inputs">
-        <div class="two-col-item">
-          <label class="two-col-label">✍️ Câu trả lời của tôi</label>
-          <textarea class="two-col-textarea" 
-          minlength="5" 
-          required
-          placeholder="Trả lời về chính bạn (ít nhất 5 ký tự)..." 
-          oninput="updateSelf(this.value)">${a.self}</textarea>
-<textarea class="two-col-textarea" 
-          minlength="5" 
-          required
-          placeholder="Đoán xem người ấy sẽ nói gì (ít nhất 5 ký tự)..." 
-          oninput="updateGuess(this.value)">${a.guess}</textarea>
-        </div>
-      </div>
+      
+      <div class="quiz-section-label">✍️ Câu trả lời thật của tôi</div>
+      ${renderOptions(q, 'self')}
+      
+      <div class="quiz-divider"></div>
+      
+      <div class="quiz-section-label">🔮 Đoán xem người ấy sẽ trả lời gì</div>
+      ${renderOptions(q, 'guess')}
     `;
 
+    // Buttons
     document.getElementById('btn-prev').disabled = (currentIndex === 0);
-    document.getElementById('btn-next').disabled = !(a.self.trim() && a.guess.trim());
-
+    updateNextButton();
+    
     if (currentIndex === TOTAL - 1) {
       document.getElementById('btn-next').textContent = 'Hoàn thành →';
     } else {
@@ -307,17 +495,22 @@
     }
   }
 
-  function updateSelf(val) {
-    answers[currentIndex].self = val;
+  function updateAnswer(side, val) {
+    answers[currentIndex][side] = val;
     updateNextButton();
   }
-  function updateGuess(val) {
-    answers[currentIndex].guess = val;
+
+  function updateOther(side, val) {
+    answers[currentIndex][side + 'Other'] = val;
     updateNextButton();
   }
+
   function updateNextButton() {
     const a = answers[currentIndex];
-    document.getElementById('btn-next').disabled = !(a.self.trim() && a.guess.trim());
+    // Điều kiện: đã chọn self + đã chọn guess
+    const selfOK = a.self && (a.self.toLowerCase().includes('khác') ? a.selfOther.trim() : true);
+    const guessOK = a.guess && (a.guess.toLowerCase().includes('khác') ? a.guessOther.trim() : true);
+    document.getElementById('btn-next').disabled = !(selfOK && guessOK);
   }
 
   function nextQuestion() {
@@ -335,17 +528,21 @@
     render();
   }
 
+  // Submit
   document.getElementById('quiz-form').addEventListener('submit', function(e) {
     e.preventDefault();
     const formData = new FormData(this);
 
     const answerStr = FLAT.map((q, i) => {
-      return `[${q.groupName}] ${q.text}\n→ Tôi: ${answers[i].self}\n→ Đoán bạn đời: ${answers[i].guess}`;
+      const a = answers[i];
+      const selfFull = a.selfOther ? `${a.self} → ${a.selfOther}` : a.self;
+      const guessFull = a.guessOther ? `${a.guess} → ${a.guessOther}` : a.guess;
+      return `[${q.groupName}] ${q.text}\n→ Tôi: ${selfFull}\n→ Đoán bạn đời: ${guessFull}`;
     }).join('\n\n');
+    
     formData.append('answers', answerStr);
     formData.append('quiz_type', 'Mức độ hiểu nhau');
 
-    // ⚠️ CHỊ THAY YOUR_FORM_ID BẰNG ID THẬT
     fetch('https://formspree.io/f/mkjgbggz', {
       method: 'POST',
       body: formData,
